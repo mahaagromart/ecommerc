@@ -1,0 +1,49 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0; /* Set your desired background color */
+    padding: 1rem 2rem;
+  }
+  
+  .navList {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navItem {
+    margin-right: 1rem;
+  }
+  
+  .navItem a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .rightSection {
+    display: flex;
+    align-items: center;
+  }
+  
+  .discount {
+    margin-right: 1rem;
+    background-color: #fdd; /* Set your desired color */
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+  }
+  
+  .hotline {
+    display: flex;
+    align-items: center;
+  }
+  
+  .hotline span {
+    margin-right: 0.5rem;
+  }
+  
+  .hotline a {
+    color: #007bff;
+    text-decoration: none;
+  }

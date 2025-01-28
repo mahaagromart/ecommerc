@@ -1,0 +1,55 @@
+/* Wrapper for the animated border effect */
+.example-5 {
+    position: relative;
+    overflow: hidden; /* Ensures the SVG border stays within the image container */
+    transition: transform 0.3s ease-out; /* Optional: smooth transition for 3D effect */
+  }
+  
+  /* Bold Border */
+  .example-5.bold-border .line {
+    stroke-width: 6px; /* Bold border */
+  }
+  
+  /* Create the animated border */
+  .example-5 svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevents the border from interfering with interactions */
+    opacity: 0; /* Initially hide the border */
+    transition: opacity 0.3s ease-in-out; /* Smooth fade-in of the border */
+  }
+  
+  /* Only animate the border when the container is hovered */
+  .example-5:hover svg {
+    opacity: 1; /* Show the SVG border */
+  }
+  
+  /* Default dashed border styling */
+  .example-5 .line {
+    stroke-dasharray: 800; /* Set the stroke length to match the path's length */
+    stroke-width: 2px; /* Default border thickness */
+    fill: transparent;
+    stroke: rgba(78, 255, 13, 0.3); /* Green color with some transparency */
+    animation: svgAnimation 3.5s linear infinite; /* Animation triggered on hover */
+  }
+  
+  /* Define the animation for the border */
+  @keyframes svgAnimation {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: 1000; /* Moves the dashed line to simulate movement */
+    }
+  }
+  
+  /* Optional: Adding hover effects to stop animation and change color */
+  .example-5:hover .line {
+    stroke: rgb(2, 158, 54); /* Change the color to red when hovered */
+    animation-play-state: running; /* Ensure the animation runs when hovered */
+    stroke-width: 6px; /* Optionally increase the stroke width on hover */
+  }
+  
