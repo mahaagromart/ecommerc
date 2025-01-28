@@ -6,17 +6,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import Seed from "../../../../public/images/homecategory/Seeds.svg";
 import Drone from "../../../../public/images/homecategory/Drone.svg";
-import Plasticulture from "../../../../public/images/homecategory/plasticulture.svg";
+
 import "../Topcategory/category.css"
 const ProductCategories = () => {
   const categories = [
-    { category: "Plasti..", products: 4, image: Plasticulture },
-    { category: "Plasti..", products: 4, image: Plasticulture },
-    { category: "Plasti..", products: 4, image: Plasticulture },
-    { category: "Plasti..", products: 4, image: Plasticulture },
-    { category: "Plasti..", products: 4, image: Plasticulture },
-    { category: "Plasti..", products: 4, image: Plasticulture },
-    { category: "Plasti..", products: 4, image: Plasticulture },
+    { category: "Seeds", products: 10, image: Seed },
+    { category: "Seeds", products: 10, image: Seed },
+    { category: "Seeds", products: 10, image: Seed },
+    { category: "Seeds", products: 10, image: Seed },
     { category: "Drone", products: 8, image: Drone },
     { category: "Seeds", products: 10, image: Seed },
     { category: "Drone", products: 8, image: Drone },
