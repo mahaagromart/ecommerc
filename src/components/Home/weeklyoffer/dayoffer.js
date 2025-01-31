@@ -1,6 +1,14 @@
 'use client';  // This tells Next.js that the component should run on the client side.
 import { FaHeart } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import img from "../../../../public/images/fruitproduct/grape.svg";
+import Fooda from "../../../../public/images/foodproduct/food-1 (1).svg";
+import Foodb from "../../../../public/images/foodproduct/food-1 (2).webp";
+import Foodc from "../../../../public/images/foodproduct/food-1 (3).webp";
+import Foodd from "../../../../public/images/foodproduct/food-1 (4).webp";
+import Foode from "../../../../public/images/foodproduct/food-1 (5).webp";
+import Foodf from "../../../../public/images/foodproduct/food-1 (6).webp";
 
 const Banner = () => {
     const [currentTime, setCurrentTime] = useState(new Date());
@@ -70,13 +78,13 @@ const Banner = () => {
             </div>
 
             {/* Bottom Section: Image and Product Columns */}
-            <div className="flex  p-2 rounded-md shadow-sm mt-4 flex-col md:flex-row">
+            <div className="flex  p-6 rounded-md shadow-sm mt-4 flex-col md:flex-row">
                 {/* Left Side Image - Online Image */}
                 <div className="w-full md:w-1/3 ">
                     <img
-                        src="https://www.radiustheme.com/demo/wordpress/themes/zilly/wp-content/uploads/2023/12/deal-women.png"
+                        src={"https://www.radiustheme.com/demo/wordpress/themes/zilly/wp-content/uploads/2023/12/deal-women.png"}
                         alt="Beverage"
-                        className="w-full h-auto rounded-md"
+                        className="w-full h-auto p-4 rounded-md"
                     />
                 </div>
 
@@ -89,22 +97,22 @@ const Banner = () => {
                                 <div className="flex items-center justify-between">
                                     <ul className="flex space-x-1">
                                         <li className="bg-gray-200 px-1 py-0.5 rounded">
-                                            <a href="https://www.radiustheme.com/demo/wordpress/themes/zilly/product-category/vegetables/" rel="tag">Vegetables</a>
+                                            <a href="" rel="tag">Fruit</a>
                                         </li>
                                     </ul>
                                     <FaHeart className="text-red-500 text-lg" />
                                 </div>
                                 <div className="relative">
-                                    <img
-                                        src="https://www.radiustheme.com/demo/wordpress/themes/zilly/wp-content/uploads/2024/01/veg_5-400x332.png"
+                                    <Image
+                                        src={img}
                                         alt="Whole Foods Market, Organic Trimmed Green Beans, 12 oz"
-                                        className="w-full h-auto rounded"
+                                        className="w-61 h-[280px] rounded"
                                     />
                                 </div>
                                 <div>
-                                    <h2 className="text-md font-semibold">Whole Foods Market, Organic Trimmed Green Beans, 12 oz</h2>
+                                    <h2 className="text-md font-semibold">Fresh Grapes of no.1 quality </h2>
                                     <div className="flex items-center space-x-1">
-                                        <span className="text-green-500 font-bold text-sm">$3.00 - $8.00</span>
+                                        <span className="text-green-500 font-bold text-sm">₹3.00 - ₹8.00</span>
                                         <span className="bg-red-500 text-white px-1 py-0.5 rounded text-xs">-77%</span>
                                     </div>
                                     <div className="flex items-center space-x-1 mt-1">
@@ -112,7 +120,7 @@ const Banner = () => {
                                         <span className="text-sm">(5.00)</span>
                                     </div>
                                     <div className="flex space-x-1 mt-2">
-                                        <button className="bg-blue-500 text-white px-2 py-1 rounded text-sm">Add to Cart</button>
+                                        <button className="bg-green-500 text-white px-2 py-1 rounded text-sm">Add to Cart</button>
                                     </div>
                                 </div>
                             </div>
@@ -122,65 +130,65 @@ const Banner = () => {
                     {/* Second Column */}
                     <div className="space-y-2  ">
                         <div className="relative flex items-start p-3 space-x-2 bg-white rounded-lg">
-                            <img
-                                src="https://www.radiustheme.com/demo/wordpress/themes/zilly/wp-content/uploads/2023/11/chips_3-100x100.png"
+                            <Image
+                                src={Fooda}
                                 alt="Delicious Lay’s Potato Chips, Classic, 8 oz Bag"
-                                className="w-1/3 h-auto rounded"
+                                  className="w-1/3 h-[130px] rounded"
                             />
                             <div className="flex-1">
-                                <h2 className="text-md font-semibold">Delicious Lay's Potato Chips, Classic, 8 oz Bag</h2>
+                                <h2 className="text-md font-semibold">Chiliiy Powder</h2>
                                 <div className="flex items-center space-x-1">
-                                    <span className="line-through text-gray-500 text-sm">$21.00</span>
-                                    <span className="text-green-500 font-bold text-sm">$12.00</span>
+                                    <span className="line-through text-gray-500 text-sm">₹21.00</span>
+                                    <span className="text-green-500 font-bold text-sm">₹12.00</span>
                                 </div>
                                 <div className="flex items-center space-x-1 mt-1">
                                     <span className="text-yellow-500 text-sm">★★★★☆</span>
                                     <span className="text-sm">(4.00)</span>
                                 </div>
                                 <div className="flex space-x-1 mt-2">
-                                    <button className="bg-blue-500 text-white px-2 py-1 rounded text-sm">Add to Cart</button>
+                                    <button className="bg-green-500 text-white px-2 py-1 rounded text-sm">Add to Cart</button>
                                 </div>
                             </div>
                         </div>
                         <div className="relative flex items-start p-3 space-x-2 bg-white rounded-lg">
-                            <img
-                                src="https://www.radiustheme.com/demo/wordpress/themes/zilly/wp-content/uploads/2023/11/chips_3-100x100.png"
+                            <Image
+                                src={Foodb}
                                 alt="Delicious Lay’s Potato Chips, Classic, 8 oz Bag"
-                                className="w-1/3 h-auto rounded"
+                                className="w-1/3 h-[130px] rounded"
                             />
                             <div className="flex-1">
-                                <h2 className="text-md font-semibold">Delicious Lay's Potato Chips, Classic, 8 oz Bag</h2>
+                                <h2 className="text-md font-semibold">Kanda Lasun..</h2>
                                 <div className="flex items-center space-x-1">
-                                    <span className="line-through text-gray-500 text-sm">$21.00</span>
-                                    <span className="text-green-500 font-bold text-sm">$12.00</span>
+                                    <span className="line-through text-gray-500 text-sm">₹21.00</span>
+                                    <span className="text-green-500 font-bold text-sm">₹12.00</span>
                                 </div>
                                 <div className="flex items-center space-x-1 mt-1">
                                     <span className="text-yellow-500 text-sm">★★★★☆</span>
                                     <span className="text-sm">(4.00)</span>
                                 </div>
                                 <div className="flex space-x-1 mt-2">
-                                    <button className="bg-blue-500 text-white px-2 py-1 rounded text-sm">Add to Cart</button>
+                                    <button className="bg-green-500 text-white px-2 py-1 rounded text-sm">Add to Cart</button>
                                 </div>
                             </div>
                         </div>
                         <div className="relative flex items-start p-3 space-x-2 bg-white rounded-lg">
-                            <img
-                                src="https://www.radiustheme.com/demo/wordpress/themes/zilly/wp-content/uploads/2023/11/chips_3-100x100.png"
+                            <Image
+                                src={Foodc}
                                 alt="Delicious Lay’s Potato Chips, Classic, 8 oz Bag"
-                                className="w-1/3 h-auto rounded"
+                                           className="w-1/3 h-[130px] rounded"
                             />
                             <div className="flex-1">
-                                <h2 className="text-md font-semibold">Delicious Lay's Potato Chips, Classic, 8 oz Bag</h2>
+                                <h2 className="text-md font-semibold">Chiwda Masala</h2>
                                 <div className="flex items-center space-x-1">
-                                    <span className="line-through text-gray-500 text-sm">$21.00</span>
-                                    <span className="text-green-500 font-bold text-sm">$12.00</span>
+                                    <span className="line-through text-gray-500 text-sm">₹21.00</span>
+                                    <span className="text-green-500 font-bold text-sm">₹12.00</span>
                                 </div>
                                 <div className="flex items-center space-x-1 mt-1">
                                     <span className="text-yellow-500 text-sm">★★★★☆</span>
                                     <span className="text-sm">(4.00)</span>
                                 </div>
                                 <div className="flex space-x-1 mt-2">
-                                    <button className="bg-blue-500 text-white px-2 py-1 rounded text-sm">Add to Cart</button>
+                                    <button className="bg-green-500 text-white px-2 py-1 rounded text-sm">Add to Cart</button>
                                 </div>
                             </div>
                         </div>
@@ -190,65 +198,65 @@ const Banner = () => {
                     {/* Third Column */}
                     <div className="space-y-2 ">
                         <div className="relative flex items-start p-3 space-x-2 bg-white rounded-lg">
-                            <img
-                                src="https://www.radiustheme.com/demo/wordpress/themes/zilly/wp-content/uploads/2023/11/chips_3-100x100.png"
+                            <Image
+                                src={Foodd}
                                 alt="Delicious Lay’s Potato Chips, Classic, 8 oz Bag"
-                                className="w-1/3 h-auto rounded"
+                                               className="w-1/3 h-[130px] rounded"
                             />
                             <div className="flex-1">
-                                <h2 className="text-md font-semibold">Delicious Lay's Potato Chips, Classic, 8 oz Bag</h2>
+                                <h2 className="text-md font-semibold">Papad Masala</h2>
                                 <div className="flex items-center space-x-1">
-                                    <span className="line-through text-gray-500 text-sm">$21.00</span>
-                                    <span className="text-green-500 font-bold text-sm">$12.00</span>
+                                    <span className="line-through text-gray-500 text-sm">₹21.00</span>
+                                    <span className="text-green-500 font-bold text-sm">₹12.00</span>
                                 </div>
                                 <div className="flex items-center space-x-1 mt-1">
                                     <span className="text-yellow-500 text-sm">★★★★☆</span>
                                     <span className="text-sm">(4.00)</span>
                                 </div>
                                 <div className="flex space-x-1 mt-2">
-                                    <button className="bg-blue-500 text-white px-2 py-1 rounded text-sm">Add to Cart</button>
+                                    <button className="bg-green-500 text-white px-2 py-1 rounded text-sm">Add to Cart</button>
                                 </div>
                             </div>
                         </div>
                         <div className="relative flex items-start p-3 space-x-2 bg-white rounded-lg">
-                            <img
-                                src="https://www.radiustheme.com/demo/wordpress/themes/zilly/wp-content/uploads/2023/11/chips_3-100x100.png"
+                            <Image
+                                src={Foode}
                                 alt="Delicious Lay’s Potato Chips, Classic, 8 oz Bag"
-                                className="w-1/3 h-auto rounded"
+                                              className="w-1/3 h-[130px] rounded"
                             />
                             <div className="flex-1">
-                                <h2 className="text-md font-semibold">Delicious Lay's Potato Chips, Classic, 8 oz Bag</h2>
+                                <h2 className="text-md font-semibold">Kala tikha..</h2>
                                 <div className="flex items-center space-x-1">
-                                    <span className="line-through text-gray-500 text-sm">$21.00</span>
-                                    <span className="text-green-500 font-bold text-sm">$12.00</span>
+                                    <span className="line-through text-gray-500 text-sm">₹21.00</span>
+                                    <span className="text-green-500 font-bold text-sm">₹12.00</span>
                                 </div>
                                 <div className="flex items-center space-x-1 mt-1">
                                     <span className="text-yellow-500 text-sm">★★★★☆</span>
                                     <span className="text-sm">(4.00)</span>
                                 </div>
                                 <div className="flex space-x-1 mt-2">
-                                    <button className="bg-blue-500 text-white px-2 py-1 rounded text-sm">Add to Cart</button>
+                                    <button className="bg-green-500 text-white px-2 py-1 rounded text-sm">Add to Cart</button>
                                 </div>
                             </div>
                         </div>
                         <div className="relative flex items-start p-3 space-x-2 bg-white rounded-lg">
-                            <img
-                                src="https://www.radiustheme.com/demo/wordpress/themes/zilly/wp-content/uploads/2023/11/chips_3-100x100.png"
+                            <Image
+                                src={Foodf}
                                 alt="Delicious Lay’s Potato Chips, Classic, 8 oz Bag"
-                                className="w-1/3 h-auto rounded"
+                                               className="w-1/3 h-[130px] rounded"
                             />
                             <div className="flex-1">
-                                <h2 className="text-md font-semibold">Delicious Lay's Potato Chips, Classic, 8 oz Bag</h2>
+                                <h2 className="text-md font-semibold">Chilly Powder pro</h2>
                                 <div className="flex items-center space-x-1">
-                                    <span className="line-through text-gray-500 text-sm">$21.00</span>
-                                    <span className="text-green-500 font-bold text-sm">$12.00</span>
+                                    <span className="line-through text-gray-500 text-sm">₹21.00</span>
+                                    <span className="text-green-500 font-bold text-sm">₹12.00</span>
                                 </div>
                                 <div className="flex items-center space-x-1 mt-1">
                                     <span className="text-yellow-500 text-sm">★★★★☆</span>
                                     <span className="text-sm">(4.00)</span>
                                 </div>
                                 <div className="flex space-x-1 mt-2">
-                                    <button className="bg-blue-500 text-white px-2 py-1 rounded text-sm">Add to Cart</button>
+                                    <button className="bg-green-500 text-white px-2 py-1 rounded text-sm">Add to Cart</button>
                                 </div>
                             </div>
                         </div>

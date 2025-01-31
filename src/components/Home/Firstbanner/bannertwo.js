@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Bannerk from "../../../../public/images/homebanner/bannerf.png";
-import Bannerm from "../../../../public/images/homebanner/bannerf.png";
-import Bannerf from "../../../../public/images/homebanner/bannerf.png"; // Replace with your actual image path
+import Bannerk from "../../../../public/images/homebanner/kuchbhe.png";
+import Bannerm from "../../../../public/images/homebanner/kuchbhe.png";
+import Bannerf from "../../../../public/images/homebanner/kuchbhe.png"; // Replace with your actual image path
 import "../Firstbanner/banner.css";
 
 export default function Banner() {
@@ -14,7 +14,7 @@ export default function Banner() {
             src={Bannerk} // Replace with your image path
             alt="Column 1 Image"
             layout="fill"
-            objectFit="cover" // Ensures the image covers the entire space of the div
+        // Ensures the image covers the entire space of the div
             className="rounded-lg"
           />
           <svg className="absolute top-0 left-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -37,7 +37,7 @@ export default function Banner() {
             src={Bannerm} // Replace with your image path
             alt="Column 2 Image"
             layout="fill"
-            objectFit="cover" // Ensures the image covers the entire space of the div
+            // Ensures the image covers the entire space of the div
             className="rounded-lg"
           />
           <svg className="absolute top-0 left-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -54,13 +54,13 @@ export default function Banner() {
           </svg>
         </div>
 
-        {/* Column 3 - Rounded corners, normal border */}
-        <div className="example-5 relative p-16 sm:p-14 lg:p-28">
+         {/* Column 2 - No rounding, normal border */}
+         <div className="example-5 relative p-16 sm:p-14 lg:p-28">
           <Image
-            src={Bannerf} // Replace with your image path
-            alt="Column 3 Image"
+            src={Bannerm} // Replace with your image path
+            alt="Column 2 Image"
             layout="fill"
-            objectFit="cover" // Ensures the image covers the entire space of the div
+            // Ensures the image covers the entire space of the div
             className="rounded-lg"
           />
           <svg className="absolute top-0 left-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">

@@ -14,7 +14,7 @@ const MarqueeSlider = () => {
                   <span className="mr-2 text-white opacity-75">
                     <i aria-hidden="true" className="fas fa-asterisk" />
                   </span>
-                  First, your free trial and enjoy 1 month of Zilly for{' '}
+                  First, your free trial and enjoy 1 month of Mahaagromart  for{' '}
                   <strong className="text-green-400">$2/month</strong> on select plans.
                 </p>
               </div>
@@ -25,7 +25,7 @@ const MarqueeSlider = () => {
                   <span className="mr-2 text-white opacity-75">
                     <i aria-hidden="true" className="fas fa-asterisk" />
                   </span>
-                  Next, your pro enjoy 5 months of Zilly for{' '}
+                  Next, your pro enjoy 5 months of Mahaagromart  for{' '}
                   <strong className="text-green-400">$10/month</strong> on select plans.
                 </p>
               </div>
@@ -35,7 +35,7 @@ const MarqueeSlider = () => {
                   <span className="mr-2 text-white opacity-75">
                     <i aria-hidden="true" className="fas fa-asterisk" />
                   </span>
-                  Previous, your pro enjoy 10 months of Zilly for{' '}
+                  Previous, your pro enjoy 10 months of Mahaagromart  for{' '}
                   <em className="text-red-500">$20/month</em> on select plans.
                 </p>
               </div>
@@ -45,7 +45,7 @@ const MarqueeSlider = () => {
                   <span className="mr-2 text-white opacity-75">
                     <i aria-hidden="true" className="fas fa-asterisk" />
                   </span>
-                  Next, your pro enjoy 12 months of Zilly for{' '}
+                  Next, your pro enjoy 12 months of Mahaagromart  for{' '}
                   <em className="text-red-500">$50/month</em> on select plans.
                 </p>
               </div>
@@ -55,7 +55,7 @@ const MarqueeSlider = () => {
                   <span className="mr-2 text-white opacity-75">
                     <i aria-hidden="true" className="fas fa-asterisk" />
                   </span>
-                  Next, your pro enjoy 12 months of Zilly for{' '}
+                  Next, your pro enjoy 12 months of Mahaagromart  for{' '}
                   <em className="text-red-500">$50/month</em> on select plans.
                 </p>
               </div>

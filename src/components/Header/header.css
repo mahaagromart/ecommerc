@@ -1,0 +1,92 @@
+/* Basic container style for categories dropdown */
+.categories-dropdown {
+    position: relative;
+    display: none; /* Initially hidden */
+}
+
+/* When hovering over the parent container, make the dropdown visible */
+.categories-dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+}
+
+/* Button styles */
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    padding: 9px 20px;
+    background-color: #f7f7f7;
+    border-radius: 34px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border: 2px solid #ccc; /* Add a border */
+}
+
+.dropdown-btn:hover {
+    background-color: #e2e2e2;
+    color: #4a4a4a;
+}
+
+.dropdown-text {
+    padding-right: 10px;
+    font-size: 15px;
+    margin-left: 5px;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    border: 2px solid #ccc;  /* Add a border to the dropdown */
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 100;  /* Ensures the dropdown appears above other elements */
+}
+
+/* Dropdown item styles */
+.dropdown-item {
+    display: flex;
+    padding: 4px 8px;
+    font-size: 14px;
+    cursor: pointer;
+    gap: 8px;
+    transition: background-color 0.3s;
+    border-bottom: 1px solid #ccc;  /* Add a bottom border for separation */
+}
+.bottom {
+  
+    margin-top: 5px;
+}
+.bottom:hover {
+    font: bold;
+    background-color: #e2e2e2;
+    color: #035728;
+}
+/* Optional: Remove the bottom border for the last item */
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover {
+    background-color: #e2e2e2;
+}
+
+.dropdown-arrow{
+    font-size: large;
+    margin-top: 5px;
+ ;
+}
+/* Media query for screens larger than 1440px */
+@media (min-width: 1440px) {
+    .categories-dropdown {
+        display: block; /* Show the dropdown on larger screens */
+    }
+}

@@ -1,44 +1,78 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import Seed from "../../../../public/images/homecategory/Seeds.svg";
-import Drone from "../../../../public/images/homecategory/Drone.svg";
+import Noga from "../../../../public/images/hometopcategoryicon/homecategorytwo/noga.svg";
+import Fertilizer from "../../../../public/images/hometopcategoryicon/homecategorytwo/fertilizer.svg";
+import Agriculture from "../../../../public/images/hometopcategoryicon/homecategorytwo/agriculturemachines.svg";
+import Drone from "../../../../public/images/hometopcategoryicon/homecategorytwo/droneservice.svg";
+import Animal from "../../../../public/images/hometopcategoryicon/homecategorytwo/animalfeed.svg";
+import Food from "../../../../public/images/hometopcategoryicon/homecategorytwo/foodproduct.svg";
+import Gardening from "../../../../public/images/hometopcategoryicon/homecategorytwo/gardening.svg";
+import Millets from "../../../../public/images/hometopcategoryicon/homecategorytwo/millets.svg";
+import Service from "../../../../public/images/hometopcategoryicon/homecategorytwo/service.svg";
+import Herbal from "../../../../public/images/hometopcategoryicon/homecategorytwo/herbal.svg";
+import Art from "../../../../public/images/hometopcategoryicon/homecategorytwo/artandcraft.svg";
+import Fruits from "../../../../public/images/hometopcategoryicon/homecategorytwo/fruits.svg";
+import "../Topcategory/category.css";
 
-import "../Topcategory/category.css"
 const ProductCategories = () => {
   const categories = [
-    { category: "Seeds", products: 10, image: Seed },
-    { category: "Seeds", products: 10, image: Seed },
-    { category: "Seeds", products: 10, image: Seed },
-    { category: "Seeds", products: 10, image: Seed },
-    { category: "Drone", products: 8, image: Drone },
-    { category: "Seeds", products: 10, image: Seed },
-    { category: "Drone", products: 8, image: Drone },
-    { category: "Seeds", products: 10, image: Seed },
-    { category: "Drone", products: 8, image: Drone },
-    { category: "Seeds", products: 10, image: Seed },
+    { category: "Noga", image: Noga },
+    { category: "Fertilizer", image: Fertilizer },
+    { category: "Agriculture", image: Agriculture },
+    { category: "Drone Service", image: Drone },
+    { category: "Animal feed", image: Animal },
+    { category: "Food product", image: Food },
+    { category: "Gardening", image: Gardening },
+    { category: "Millets", image: Millets },
+    { category: "Service", image: Service },
+    { category: "Herbal product", image: Herbal },
+    { category: "Art and craft", image: Art },
+    { category: "Fruits", image: Fruits },
   ];
 
-  const categoriesPerSlide = 6; 
+  const categoriesPerSlide = {
+    base: 12, // 3 items on small screens
+    md: 12,   // 4 items on medium screens (tablets)
+    lg: 5,   // 6 items on large screens (desktops)
+  };
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [categoriesPerView, setCategoriesPerView] = useState(categoriesPerSlide.base);
+
+  // Update categories per slide based on screen width
+  useEffect(() => {
+    const updateCategoriesPerView = () => {
+      if (window.innerWidth >= 1024) {
+        setCategoriesPerView(categoriesPerSlide.lg);
+      } else if (window.innerWidth >= 768) {
+        setCategoriesPerView(categoriesPerSlide.md);
+      } else {
+        setCategoriesPerView(categoriesPerSlide.base);
+      }
+    };
+
+    updateCategoriesPerView();
+    window.addEventListener("resize", updateCategoriesPerView);
+    return () => window.removeEventListener("resize", updateCategoriesPerView);
+  }, []);
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + categoriesPerSlide) % categories.length);
+    setCurrentIndex((prevIndex) => {
+      const newIndex = prevIndex + categoriesPerView;
+      return newIndex >= categories.length ? 0 : newIndex;
+    });
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - categoriesPerSlide + categories.length) % categories.length);
+    setCurrentIndex((prevIndex) => {
+      const newIndex = prevIndex - categoriesPerView;
+      return newIndex < 0 ? categories.length - categoriesPerView : newIndex;
+    });
   };
-
-  const displayedCategories = categories.slice(currentIndex, currentIndex + categoriesPerSlide);
-
-  if (displayedCategories.length < categoriesPerSlide) {
-    displayedCategories.push(...categories.slice(0, categoriesPerSlide - displayedCategories.length));
-  }
 
   return (
     <div className="container mx-auto p-4">
@@ -53,21 +87,24 @@ const ProductCategories = () => {
           <FontAwesomeIcon icon={faChevronLeft} />
         </button>
 
-        <div className="flex gap-6 flex-nowrap overflow-x-auto scrollbar-hide">
-          {displayedCategories.map((category, index) => (
-            <div key={index} className="p-4 w-48 flex-shrink-0 flex items-center">
-              <Image
-                src={category.image}
-                alt={category.category}
-                className="w-16 h-16 object-cover rounded-full mr-4"
-              />
+        <div className="flex  flex-nowrap overflow-x-auto scrollbar-hide">
+          {categories.slice(currentIndex, currentIndex + categoriesPerView).map((category, index) => (
+            <div key={index} className="w-64 flex-shrink-0 flex items-center">
+              <div className="bg-[#e8f2ee;] rounded-full inline-block p-2 ml-2">
+                <Image
+                  src={category.image}
+                  alt={category.category}
+                  className="w-20 h-20 rounded-full"
+                />
+              </div>
+
               <div className="flex flex-col">
-                <h2 className="text-lg font-bold">{category.category}</h2>
-                <p className="text-sm">{category.products} Products</p>
+                <h2 className="text-lg font-bold p-4">{category.category}</h2>
               </div>
             </div>
           ))}
         </div>
+
 
         <button
           onClick={nextSlide}
