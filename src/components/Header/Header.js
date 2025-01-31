@@ -17,7 +17,7 @@ import Art from "../../../public/images/hometopcategoryicon/arts.svg";
 import Packing from "../../../public/images/hometopcategoryicon/packing.svg";
 import Plasticulture from "../../../public/images/hometopcategoryicon/plasticulture.svg";
 import Fruit from "../../../public/images/hometopcategoryicon/fruits.svg";
-import Other from "../../../public/images/hometopcategoryicon/other.svg";
+
 import { FiSearch, FiChevronDown } from 'react-icons/fi';
 import { BiMenuAltLeft } from "react-icons/bi";
 import { FaHeart, FaShoppingCart, FaUser } from 'react-icons/fa';
@@ -45,7 +45,7 @@ const categories = [
     { name: "Packing Materials", image: Packing, link: "" },
     { name: "Plasticulture", image: Plasticulture, link: "" },
     { name: "Fruits", image: Fruit, link: "" },
-    { name: "other", image: Other, link: "" },
+   
 
 ];
 
