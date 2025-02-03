@@ -13,8 +13,13 @@ import Testimonial from "./Testimonial/Testimonial"
 import Bannerfour from "./Firstbanner/bannerfour"
 import Noga from "./Nogaproduct/noga"
 import Bannerfive from "./Firstbanner/bannerfive"
+import Pesticides from "./Pesticides/pesticides"
+import Fertilizer from "./Fertilizerproduct/fertilizer"
+import Animal from "./Animalproduct/animal"
 import Garden from "./Gardeningpro/garden"
 import Bannersix from "./Firstbanner/bannersix"
+import Agroengineer from "./Agroengineer/Agroengineer"
+import Belowbanner from "./Firstbanner/bannerseven"
 const Home = () => {
   return (
     <main>
@@ -31,9 +36,18 @@ const Home = () => {
       <Bannerfour />
       <Noga />
       <Bannerfive />
+      <Pesticides/>
+      <Bannersix />
+      <Fertilizer/>
+      <Bannersix />
+      <Animal/>
+      <Bannersix />
       <Garden/>
       <Bannersix />
+      <Agroengineer/>
+      <Bannersix />
       <Testimonial />
+      <Belowbanner />
     
     </main>
   );

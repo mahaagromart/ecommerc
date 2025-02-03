@@ -1,13 +1,12 @@
 "use client";
 import Image from "next/image";
 import { useState, useRef } from 'react';
-import img from "../../../../public/images/fruitproduct/pineapple.svg";
-import Fooda from "../../../../public/images/foodproduct/food-1 (1).svg";
-import Foodb from "../../../../public/images/foodproduct/food-1 (2).webp";
-import Foodc from "../../../../public/images/foodproduct/food-1 (3).webp";
-import Foodd from "../../../../public/images/foodproduct/food-1 (4).webp";
-import Foode from "../../../../public/images/foodproduct/food-1 (5).webp";
-import Foodf from "../../../../public/images/foodproduct/food-1 (6).webp";
+import Pesticidesa from "../../../../public/images/Pesticides/pesti (1).svg";
+import Pesticidesb from "../../../../public/images/Pesticides/pesti (2).svg";
+import Pesticidesc from "../../../../public/images/Pesticides/pesti (3).svg";
+import Pesticidesd from "../../../../public/images/Pesticides/pesti (4).svg";
+import Pesticidese from "../../../../public/images/Pesticides/pesti (5).svg";
+import Pesticidesf from "../../../../public/images/Pesticides/pesti (7).webp";
 import { FaHeart, FaArrowRight, FaArrowLeft } from 'react-icons/fa'; // Import heart and arrow icons
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -19,9 +18,9 @@ export default function Home() {
         
         {
             id: 1,
-            category: 'Food',
-            name: 'Kanda Lasun..',
-            image: Foodb,
+            category: 'Pesticides',
+            name: 'Delta Trap ',
+            image: Pesticidesa,
             price: {
                 original: 8,
                 discounted: 3,
@@ -38,9 +37,9 @@ export default function Home() {
         },
         {
             id: 2,
-            category: 'Food',
-            name: 'Kanda Lasun..',
-            image: Foodb,
+            category: 'Pesticides',
+            name: 'House fly..',
+            image: Pesticidesb,
             price: {
                 original: 8,
                 discounted: 3,
@@ -57,9 +56,9 @@ export default function Home() {
         },
         {
             id: 3,
-            category: 'Food',
-            name: 'Chiwda Masala',
-            image:Foodc,
+            category: 'Pesticides',
+            name: 'Wavar trap',
+            image:Pesticidesc,
             price: {
                 original: 8,
                 discounted: 3,
@@ -76,9 +75,9 @@ export default function Home() {
         },
         {
             id: 4,
-            category: 'Food',
-            name: 'Papad Masala',
-            image:Foodd,
+            category: 'Pesticides',
+            name: 'Sticky trap',
+            image:Pesticidesd,
             price: {
                 original: 8,
                 discounted: 3,
@@ -95,9 +94,9 @@ export default function Home() {
         },
         {
             id: 5,
-            category: 'Food',
-            name: 'Garam Masala',
-            image: Foode,
+            category: 'Pesticides',
+            name: 'Sahjan',
+            image: Pesticidese,
             price: {
                 original: 8,
                 discounted: 3,
@@ -114,9 +113,9 @@ export default function Home() {
         },
         {
             id: 6,
-            category: 'Food',
-            name: 'Chiliiy Powder',
-            image:Foodf,
+            category: 'Pesticides',
+            name: 'TRICHODERMA ..',
+            image:Pesticidesf,
             price: {
                 original: 8,
                 discounted: 3,
@@ -194,7 +193,7 @@ export default function Home() {
     return (
         <div className="container mx-auto p-4 font-poppins">
             <div className="flex justify-between items-center mb-4">
-                <h1 className="text-2xl font-bold">Food Product</h1>
+                <h1 className="text-2xl font-bold">Pesticides Product</h1>
                 <a href="#" className="flex items-center text-green-700 hover:text-green-900">
                     View All <FaArrowRight className="ml-2" />
                 </a>

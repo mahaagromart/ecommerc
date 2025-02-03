@@ -1,119 +1,101 @@
-import React from 'react';
+'use client';
+import { useState } from 'react';
+import one from "../../../../public/images/img/one.webp";
+import two from "../../../../public/images/img/person1.jpg";
+import Image from 'next/image';
 
-const Testimonial = ({ testimonial }) => {
-  // Function to render stars based on the rating
-  const renderStars = (rating) => {
-    const fullStars = Math.floor(rating);  // Full stars based on the rating
-    const halfStar = rating % 1 >= 0.5;  // Check for half-star
-    const emptyStars = 5 - Math.ceil(rating); // Empty stars to complete 5 stars
-
-    let stars = '';
-
-    // Add full stars
-    for (let i = 0; i < fullStars; i++) {
-      stars += '★'; // Full star
-    }
-
-    // Add half star if applicable
-    if (halfStar) {
-      stars += '⭐'; // Half star
-    }
-
-    // Add empty stars
-    for (let i = 0; i < emptyStars; i++) {
-      stars += '☆'; // Empty star
-    }
-
-    return stars;
-  };
-
+const Testimonial = ({ name, role, content, imgSrc, index, expandedIndex, toggleTestimonial }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md p-6">
-      <div className="flex justify-between items-center mb-4">
-        <div className="flex items-center">
-          <span className="text-xl">{renderStars(testimonial.rating)}</span>
-        </div>
-        <span className="text-sm text-gray-500">{testimonial.rating}/5.0</span>
+    <div className="max-w-3xl mx-auto my-8 p-6 relative z-10">
+      {/* Image at the top */}
+      <div className="flex justify-center mb-6 relative z-20">
+        <Image
+          src={imgSrc}
+          alt={name}
+          className="w-24 h-24 rounded-full border-4 border-green-500 shadow-lg"
+        />
       </div>
 
-      <h3 className="text-lg font-semibold mb-2">{testimonial.title}</h3>
-      <p className="text-gray-600">{testimonial.text}</p>
-
-      <div className="flex items-center mt-4">
-        <img
-          src="https://randomuser.me/api/portraits/men/32.jpg" // User avatar
-          alt="User Avatar"
-          className="w-8 h-8 rounded-full"
-        />
-        <div className="ml-2">
-          <span className="font-semibold">{testimonial.name}</span>
-          <span className="text-sm text-gray-500">{testimonial.position}</span>
+      {/* Testimonial Box with Half Border and Background */}
+      <div className="p-6 mt-[-50px] bg-gradient-to-b from-green-100 to-white border-t-2 border-l-4 border-r-4 border-b-4 border-green-500 relative z-10 rounded-lg">
+        {/* Name and Role */}
+        <div className="flex flex-col items-center mb-2">
+          <p className="text-xl font-semibold text-gray-800 text-center">{name}</p>
+          <p className="text-md text-gray-500 italic text-center">{role}</p>
+        </div>
+        <p className="text-gray-700 text-lg leading-relaxed mb-6">
+          {expandedIndex === index
+            ? content
+            : content.substring(0, 150) + '...'}
+        </p>
+        <div className="flex justify-center mt-4">
+          <button
+            onClick={() => toggleTestimonial(index)}
+            className={`font-semibold px-6 py-2 rounded-md 
+              ${expandedIndex === index ? 'text-green-600 hover:text-green-800' : 'bg-green-600 text-white hover:bg-green-700'}`}
+          >
+            {expandedIndex === index ? 'Read Less' : 'View My Story'}
+          </button>
         </div>
       </div>
     </div>
   );
 };
 
-const HomePage = () => {
+const TestimonialsSection = () => {
+  const [expandedIndex, setExpandedIndex] = useState(null);
+
+  const toggleTestimonial = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
   const testimonials = [
     {
-      title: 'Excellent service!',
-      text: 'Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy.',
-      rating: 4.5,  // Dynamic rating
-      name: 'John Doe',
-      position: 'Client',
+      name: 'Prashik',
+      role: 'DEO, Pune, Maharashtra',
+      content: 'MahaAgroMart has truly revolutionized the way I source agricultural products online...',
+      imgSrc: one,
     },
     {
-      title: 'Great experience!',
-      text: 'Lorem ipsum has been the standard for the printing and typesetting industry for many years.',
-      rating: 5, // Full 5-star rating
-      name: 'Jane Smith',
-      position: 'Customer',
+      name: 'Shubham',
+      role: 'Asst Manager, Mumbai',
+      content: 'महाराष्ट्र कृषी-उद्योग विकास महामंडळाच्या महाअॅग्रोमार्ट उपक्रमास स्कॉच पुरस्कार...',
+      imgSrc: two,
     },
     {
-      title: 'Very good quality',
-      text: 'The product quality exceeded my expectations, will buy again!',
-      rating: 4, // 4-star rating
-      name: 'Michael Johnson',
-      position: 'User',
+      name: 'Abhishek Porel',
+      role: 'Farmer, Nagpur',
+      content: 'MahaAgroMart has truly revolutionized the way I source agricultural products online...',
+      imgSrc: one,
+    },
+    {
+      name: 'Ajay goswami',
+      role: 'Farmer, Solapur',
+      content: 'MahaAgroMart has truly revolutionized the way I source agricultural products online...',
+      imgSrc: two,
     },
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        {/* First Column: Testimonial Heading, Paragraph, and Show Product Button */}
-        <div className="col-span-1 p-4 flex flex-col justify-center items-center">
-          <h2 className="text-2xl font-bold mb-4">Customer Testimonials</h2>
-          <p className="text-center mb-4 text-gray-600">
-            Read how our customers feel about our products and services  will display individual testimonials dynamically..
-          </p>
-          <button className="flex items-center px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              className="w-5 h-5 mr-2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-            Show Product
-          </button>
-        </div>
-
-        {/* Other Columns: Testimonials */}
+    <div className="container mx-auto px-4 py-10">
+      <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">What Our Customers Say</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {testimonials.map((testimonial, index) => (
-          <Testimonial key={index} testimonial={testimonial} />
+          <Testimonial
+            key={index}
+            name={testimonial.name}
+            role={testimonial.role}
+            content={testimonial.content}
+            imgSrc={testimonial.imgSrc}
+            index={index}
+            expandedIndex={expandedIndex}
+            toggleTestimonial={toggleTestimonial}
+          />
         ))}
       </div>
     </div>
+    
   );
 };
 
-export default HomePage;
+export default TestimonialsSection;

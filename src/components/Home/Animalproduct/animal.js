@@ -1,13 +1,12 @@
 "use client";
 import Image from "next/image";
 import { useState, useRef } from 'react';
-import img from "../../../../public/images/fruitproduct/pineapple.svg";
-import Fooda from "../../../../public/images/foodproduct/food-1 (1).svg";
-import Foodb from "../../../../public/images/foodproduct/food-1 (2).webp";
-import Foodc from "../../../../public/images/foodproduct/food-1 (3).webp";
-import Foodd from "../../../../public/images/foodproduct/food-1 (4).webp";
-import Foode from "../../../../public/images/foodproduct/food-1 (5).webp";
-import Foodf from "../../../../public/images/foodproduct/food-1 (6).webp";
+import Animala from "../../../../public/images/Animal/animal (1).jpg";
+import Animalb from "../../../../public/images/Animal/animal (2).jpg";
+import Animalc from "../../../../public/images/Animal/animal (3).jpg";
+import Animald from "../../../../public/images/Animal/animal (4).jpg";
+import Animale from "../../../../public/images/Animal/animal (5).jpg";
+import Animalf from "../../../../public/images/Animal/animal (6).webp";
 import { FaHeart, FaArrowRight, FaArrowLeft } from 'react-icons/fa'; // Import heart and arrow icons
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -19,9 +18,9 @@ export default function Home() {
         
         {
             id: 1,
-            category: 'Food',
-            name: 'Kanda Lasun..',
-            image: Foodb,
+            category: 'Animal-food',
+            name: 'Goshakti.. ',
+            image: Animala,
             price: {
                 original: 8,
                 discounted: 3,
@@ -38,9 +37,9 @@ export default function Home() {
         },
         {
             id: 2,
-            category: 'Food',
-            name: 'Kanda Lasun..',
-            image: Foodb,
+            category: 'Animal-food',
+            name: 'Sugrass Gold..',
+            image:Animalb,
             price: {
                 original: 8,
                 discounted: 3,
@@ -57,9 +56,9 @@ export default function Home() {
         },
         {
             id: 3,
-            category: 'Food',
-            name: 'Chiwda Masala',
-            image:Foodc,
+            category: 'Animal-food',
+            name: 'Goratna..',
+            image:Animalc,
             price: {
                 original: 8,
                 discounted: 3,
@@ -76,9 +75,9 @@ export default function Home() {
         },
         {
             id: 4,
-            category: 'Food',
-            name: 'Papad Masala',
-            image:Foodd,
+            category: 'Animal-food',
+            name: 'Pashudhan..',
+            image:Animald,
             price: {
                 original: 8,
                 discounted: 3,
@@ -95,9 +94,9 @@ export default function Home() {
         },
         {
             id: 5,
-            category: 'Food',
-            name: 'Garam Masala',
-            image: Foode,
+            category: 'Animal-food',
+            name: 'Sarwattam..',
+            image: Animale,
             price: {
                 original: 8,
                 discounted: 3,
@@ -114,9 +113,9 @@ export default function Home() {
         },
         {
             id: 6,
-            category: 'Food',
-            name: 'Chiliiy Powder',
-            image:Foodf,
+            category: 'Animal-food',
+            name: 'Bvg dhara..',
+            image:Animalf,
             price: {
                 original: 8,
                 discounted: 3,
@@ -194,7 +193,7 @@ export default function Home() {
     return (
         <div className="container mx-auto p-4 font-poppins">
             <div className="flex justify-between items-center mb-4">
-                <h1 className="text-2xl font-bold">Food Product</h1>
+                <h1 className="text-2xl font-bold">Animal Product</h1>
                 <a href="#" className="flex items-center text-green-700 hover:text-green-900">
                     View All <FaArrowRight className="ml-2" />
                 </a>

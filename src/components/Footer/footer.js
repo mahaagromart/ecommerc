@@ -1,196 +1,99 @@
-import React from 'react';
-import Image from "next/image";
-import img from "../../../public/images/img/footerlogo.webp"
+import Image from 'next/image';
+import logo from '../../../public/images/img/footerlogo.webp';
+import barcode from '../../../public/images/img/qrcode.png';
+import iosIcon from '../../../public/images/img/secure.png';
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope, FaClock } from 'react-icons/fa'; // React icons
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1b8057] text-white">
-      <div id="footer-1" className="footer-area">
-        <div className="footer-top-area">
-          <div className="footer-content-area">
-            <div className="container mx-auto px-4 py-8">
-              <div className="flex flex-wrap justify-start"> {/* Changed justify-center to justify-start */}
-                <div className="footer-item xl:w-1/5 lg:w-1/4 md:w-1/2 px-4 mb-8">
-                  <div className="footer-custom-logo widget widget_media_image">
-                    <a href="#">
-                      <Image
-                        width="267"
-                        height="450"
-                        src={img}
-                        alt="mahaagromart"
-                        className="max-w-full h-auto"
-                        decoding="async"
-                      />
-                    </a>
-                  </div>
-                  <div className="widget widget_zilly_address">
-                    <p className="rtin-des">
-                      When an unknown printer took a galley of type scrambled it to make a type specimen book.
-                    </p>
-                    <ul className="corporate-address">
-                      <li>
-                        <i className="fas fa-location"></i>
-                        <span>23/A Road, New York City</span>
-                      </li>
-                      <li>
-                        <i className="fas fa-phone"> </i>
-                        <span>
-                          <a href="tel:+9888-256-666">+9888-256-666</a>
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="widget rt_footer_social_widget">
-                    <ul className="footer-social flex space-x-4">
-                      <li>
-                        <a href="#" target="_blank" aria-label="Social Link">
-                          <i className="fab fa-facebook-f"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank" aria-label="Social Link">
-                          <i className="fab fa-x-twitter"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank" aria-label="Social Link">
-                          <i className="fab fa-pinterest-p"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank" aria-label="Social Link">
-                          <i className="fab fa-instagram"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">
-                          <i className="fab fa-tiktok"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+    <footer className="bg-white text-gray-800 py-16">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 md:gap-16">
 
-                <div className="footer-item xl:w-1/5 lg:w-1/4 md:w-1/2 px-4 mb-8">
-                  <div className="widget widget_nav_menu">
-                    <h3 className="widgettitle has-animation">Quick Links</h3>
-                    <ul className="menu">
-                      <li><a href="#">Smartphones</a></li>
-                      <li><a href="#">Headphones</a></li>
-                      <li><a href="#">Laptop &amp; Tablet</a></li>
-                      <li><a href="#">Monitors</a></li>
-                      <li><a href="#">Printers</a></li>
-                      <li><a href="#">Gadgets</a></li>
-                    </ul>
-                  </div>
-                </div>
+          {/* First Column: Logo & Contact Info */}
+          <div className="flex flex-col items-start space-y-6">
+            <Image src={logo} alt="Logo" className="mb-6 max-w-[250px] max-h-[80px]" />
+            <div className="space-y-4">
+              <p className="text-sm text-gray-600 flex items-center">
+                <FaPhoneAlt className="text-green-600 mr-2 text-xl" />
+                <span>Call us: Monday - Friday, 9:30 AM - 5:50 PM</span>
+              </p>
+              <p className="text-sm text-gray-600 flex items-center">
+                <FaMapMarkerAlt className="text-green-600 mr-2 text-6xl" /> {/* Increased icon size */}
+                <span>Address: E-Commerce Division, MAIDC, Krushi Udyog Bhavan Dinkarrao Desai Marg, Aarey Milk Colony, Goregaon (E), Mumbai - 400065</span>
+              </p>
+              <p className="text-sm text-gray-600 flex items-center">
+                <FaEnvelope className="text-green-600 mr-2 text-3xl" /> {/* Increased icon size */}
+                <span>Email: support@mahaagromart.com, info@mahaagromart.com</span>
+              </p>
+              {/* Working Hours */}
+              <p className="text-sm text-gray-600 flex items-center">
+                <FaClock className="text-green-600 mr-2 text-2xl" />
+                <span>Working Hours: Mon - Fri, 9:30 AM - 5:50 PM</span>
+              </p>
+            </div>
+          </div>
 
-                <div className="footer-item xl:w-1/5 lg:w-1/4 md:w-1/2 px-4 mb-8">
-                  <div className="widget widget_nav_menu">
-                    <h3 className="widgettitle has-animation">Accounts</h3>
-                    <ul className="menu">
-                      <li><a href="#">My Orders</a></li>
-                      <li><a href="#">Cart</a></li>
-                      <li><a href="#">Checkout</a></li>
-                      <li><a href="#">Compare</a></li>
-                      <li><a href="#">My account</a></li>
-                      <li><a href="#">Wishlist</a></li>
-                    </ul>
-                  </div>
-                </div>
 
-                <div className="footer-item xl:w-1/5 lg:w-1/4 md:w-1/2 px-4 mb-8">
-                  <div className="widget widget_nav_menu">
-                    <h3 className="widgettitle has-animation">Privacy Policy</h3>
-                    <ul className="menu">
-                      <li><a href="#">Returns &amp; Exchanges</a></li>
-                      <li><a href="#">Payment Terms</a></li>
-                      <li><a href="#">Delivery Terms</a></li>
-                      <li><a href="#">Payment &amp; Pricing</a></li>
-                      <li><a href="#">Terms Of Use</a></li>
-                      <li><a href="#">Privacy Policy</a></li>
-                    </ul>
-                  </div>
-                </div>
+          {/* Second Column: Helpful Links */}
+          <div>
+            <h3 className="text-lg font-bold text-green-600 mb-6">Helpful Links</h3>
+            <ul className="space-y-4">
+              <li><a href="#" className="text-sm text-gray-600 hover:text-green-600 transition duration-300">Customer Service</a></li>
+              <li><a href="#" className="text-sm text-gray-600 hover:text-green-600 transition duration-300">Returns</a></li>
+              <li><a href="#" className="text-sm text-gray-600 hover:text-green-600 transition duration-300">FAQ</a></li>
+              <li><a href="#" className="text-sm text-gray-600 hover:text-green-600 transition duration-300">Shipping Information</a></li>
+              <li><a href="#" className="text-sm text-gray-600 hover:text-green-600 transition duration-300">Privacy Policy</a></li>
+              <li><a href="#" className="text-sm text-gray-600 hover:text-green-600 transition duration-300">Terms of Service</a></li>
+            </ul>
+          </div>
 
-                <div className="footer-item xl:w-1/5 lg:w-1/4 md:w-1/2 px-4 mb-8">
-                  <div className="widget widget_zilly_address">
-                    <h3 className="widgettitle has-animation">Sign Up Newsletter</h3>
-                    <p className="rtin-des">
-                      When an unknown printer took a galley of type and scrambled
-                    </p>
-                  </div>
-                  <div className="widget widget_fluentform_widget">
-                    <form className="fluentform ff-default fluentform_wrapper_4 ffs_default_wrap">
-                      <fieldset className="border-none m-0 p-0 bg-transparent shadow-none outline-none min-w-full">
-                        <legend className="sr-only">Newsletter Footer</legend>
-                        <input type="hidden" name="__fluent_form_embded_post_id" value="176" />
-                        <input type="hidden" name="_fluentform_4_fluentformnonce" value="72bb87070e" />
-                        <input type="hidden" name="_wp_http_referer" value="/demo/wordpress/themes/zilly/" />
-                        <div className="flex">
-                          <div className="flex-grow">
-                            <input
-                              type="email"
-                              name="email"
-                              placeholder="Type Your E-mail"
-                              className="ff-el-form-control w-full"
-                              required
-                            />
-                          </div>
-                          <div className="ml-2">
-                            <button type="submit" className="ff-btn ff-btn-submit ff-btn-md">
-                              <i className="fas fa-arrow-right"></i>
-                            </button>
-                          </div>
-                        </div>
-                      </fieldset>
-                    </form>
-                  </div>
+          {/* Third Column: Services */}
+          <div>
+            <h3 className="text-lg font-bold text-green-600 mb-6">Our Services</h3>
+            <ul className="space-y-4">
+              <li><a href="#" className="text-sm text-gray-600 hover:text-green-600 transition duration-300">Farm Tours</a></li>
+              <li><a href="#" className="text-sm text-gray-600 hover:text-green-600 transition duration-300">Crop Harvesting</a></li>
+              <li><a href="#" className="text-sm text-gray-600 hover:text-green-600 transition duration-300">Cooking Experiences</a></li>
+              <li><a href="#" className="text-sm text-gray-600 hover:text-green-600 transition duration-300">Farm Workshops</a></li>
+              <li><a href="#" className="text-sm text-gray-600 hover:text-green-600 transition duration-300">Group Packages</a></li>
+              <li><a href="#" className="text-sm text-gray-600 hover:text-green-600 transition duration-300">Gift Vouchers</a></li>
+            </ul>
+          </div>
 
-                  <div className="widget_text footer-google-app widget widget_custom_html">
-                    <h4>Download App on Mobile :</h4>
-                    <p>15% discount on your first purchase</p>
-                    <ul className="flex space-x-4">
-                      <li>
-                        <img
-                          src="https://www.radiustheme.com/demo/wordpress/themes/zilly/wp-content/uploads/2023/11/google-play.jpg"
-                          alt="google play"
-                          className="w-24 h-auto"
-                        />
-                      </li>
-                      <li>
-                        <img
-                          src="https://www.radiustheme.com/demo/wordpress/themes/zilly/wp-content/uploads/2023/11/app-stoe.jpg"
-                          alt="app store"
-                          className="w-24 h-auto"
-                        />
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+          {/* Fourth Column: Barcode, App Download, Payment & Social Links */}
+          <div>
+            <h3 className="text-lg font-bold text-green-600 mb-6">Install  App</h3>
+            <div className="flex flex-col items-start space-y-6">
+              {/* Barcode */}
+              <Image src={barcode} alt="Barcode" width={130} height={130} className="transition-transform duration-300 transform hover:scale-105" />
+              <div className="flex space-x-6">
+                <a href="#" className="text-gray-600 hover:text-green-600 transition duration-300">
+                  <Image src={iosIcon} alt="Download on iOS" width={180} height={80} />
+                </a>
+              </div>
+              {/* Payment Security & Social Icons */}
+              <div className="flex items-center space-x-4 mt-6">
+                <span className="material-icons text-gray-600">lock</span>
+                <p className="text-sm text-gray-600">Secure Payment Gateway</p>
+              </div>
+              <div className="flex space-x-6 mt-6">
+                <a href="#" className="text-gray-600 hover:text-green-600 transition duration-300"><FaFacebookF className="text-xl" /></a>
+                <a href="#" className="text-gray-600 hover:text-green-600 transition duration-300"><FaTwitter className="text-xl" /></a>
+                <a href="#" className="text-gray-600 hover:text-green-600 transition duration-300"><FaInstagram className="text-xl" /></a>
+                <a href="#" className="text-gray-600 hover:text-green-600 transition duration-300"><FaLinkedinIn className="text-xl" /></a>
               </div>
             </div>
           </div>
+
         </div>
-        <div className="footer-copyright-area bg-[#1b8057]">
-          <div className="container mx-auto px-4 py-4">
-            <div className="flex flex-wrap justify-between items-center">
-              <div className="text-center md:text-left">
-                <div className="text-white font-semibold">
-                  © 2025 Mahaagromart. All Rights Reserved by Mahaagromart
-                </div>
-              </div>
-              <div className="text-center md:text-right">
-                <img
-                  width="286"
-                  height="23"
-                  src={"https://www.radiustheme.com/demo/wordpress/themes/zilly/wp-content/themes/zilly/assets/img/payment-logo.svg"}
-                  alt="zilly"
-                  className="mx-auto md:mx-0"
-                />
-              </div>
-            </div>
-          </div>
+      </div>
+
+      {/* Bottom Section */}
+      <div className="bg-green-600 py-6 mt-12">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <p className="text-sm text-white">&copy; 2025 MahaAgroMart. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

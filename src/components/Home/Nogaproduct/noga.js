@@ -1,29 +1,26 @@
 "use client";
 import Image from "next/image";
 import { useState, useRef } from 'react';
-import img from "../../../../public/images/noga/noga.webp";
+import Fooda from "../../../../public/images/noga/nogap (1).webp";
+import Foodb from "../../../../public/images/noga/nogap (2).webp";
+import Foodc from "../../../../public/images/noga/nogap (3).webp";
+import Foodd from "../../../../public/images/noga/nogap (4).webp";
+import Foode from "../../../../public/images/noga/nogap (5).webp";
+import Foodf from "../../../../public/images/noga/nogap (6).webp";
 import { FaHeart, FaArrowRight, FaArrowLeft } from 'react-icons/fa'; // Import heart and arrow icons
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default function Home() {
-    const [selectedWeight, setSelectedWeight] = useState({
-        id: 1,
-        weight: '350g',
-        price: 3,
-        originalPrice: 8,  // Default original price
-        discountedPrice: 3 // Default discounted price
-    });
-
     const [cart, setCart] = useState([]);
 
     const [products, setProducts] = useState([
-   
+        
         {
-            id: 2,
-            category: 'Vegetables',
-            name: 'Organic ..',
-            image: img,
+            id: 1,
+            category: 'Juice',
+            name: 'Pineapple Jam ',
+            image: Fooda,
             price: {
                 original: 8,
                 discounted: 3,
@@ -35,13 +32,33 @@ export default function Home() {
                 { label: '350g', originalPrice: 8, discountedPrice: 3 },
                 { label: '500g', originalPrice: 10, discountedPrice: 4 },
                 { label: '1kg', originalPrice: 15, discountedPrice: 7 },
-            ]
+            ],
+            selectedWeight: { label: '350g', originalPrice: 8, discountedPrice: 3 }
+        },
+        {
+            id: 2,
+            category: 'Juice',
+            name: 'Pineapple Squash',
+            image: Foodb,
+            price: {
+                original: 8,
+                discounted: 3,
+            },
+            discount: 77,
+            rating: 5,
+            reviews: 500,
+            weights: [
+                { label: '350g', originalPrice: 8, discountedPrice: 3 },
+                { label: '500g', originalPrice: 10, discountedPrice: 4 },
+                { label: '1kg', originalPrice: 15, discountedPrice: 7 },
+            ],
+            selectedWeight: { label: '350g', originalPrice: 8, discountedPrice: 3 }
         },
         {
             id: 3,
-            category: 'Vegetables',
-            name: 'Organic ..',
-            image: img,
+            category: 'Food',
+            name: 'Tomato Sauce ',
+            image:Foodc,
             price: {
                 original: 8,
                 discounted: 3,
@@ -53,13 +70,14 @@ export default function Home() {
                 { label: '350g', originalPrice: 8, discountedPrice: 3 },
                 { label: '500g', originalPrice: 10, discountedPrice: 4 },
                 { label: '1kg', originalPrice: 15, discountedPrice: 7 },
-            ]
+            ],
+            selectedWeight: { label: '350g', originalPrice: 8, discountedPrice: 3 }
         },
         {
             id: 4,
-            category: 'Vegetables',
-            name: 'Organic ..',
-            image: img,
+            category: 'Juice',
+            name: 'Mango Juice',
+            image:Foodd,
             price: {
                 original: 8,
                 discounted: 3,
@@ -71,13 +89,14 @@ export default function Home() {
                 { label: '350g', originalPrice: 8, discountedPrice: 3 },
                 { label: '500g', originalPrice: 10, discountedPrice: 4 },
                 { label: '1kg', originalPrice: 15, discountedPrice: 7 },
-            ]
+            ],
+            selectedWeight: { label: '350g', originalPrice: 8, discountedPrice: 3 }
         },
         {
             id: 5,
-            category: 'Vegetables',
-            name: 'Organic ..',
-            image: img,
+            category: 'Juice',
+            name: 'Tamato juice',
+            image: Foode,
             price: {
                 original: 8,
                 discounted: 3,
@@ -89,13 +108,14 @@ export default function Home() {
                 { label: '350g', originalPrice: 8, discountedPrice: 3 },
                 { label: '500g', originalPrice: 10, discountedPrice: 4 },
                 { label: '1kg', originalPrice: 15, discountedPrice: 7 },
-            ]
+            ],
+            selectedWeight: { label: '350g', originalPrice: 8, discountedPrice: 3 }
         },
         {
             id: 6,
-            category: 'Vegetables',
-            name: 'Organic ..',
-            image: img,
+            category: 'Juice',
+            name: 'Mango juice',
+            image:Foodf,
             price: {
                 original: 8,
                 discounted: 3,
@@ -107,101 +127,33 @@ export default function Home() {
                 { label: '350g', originalPrice: 8, discountedPrice: 3 },
                 { label: '500g', originalPrice: 10, discountedPrice: 4 },
                 { label: '1kg', originalPrice: 15, discountedPrice: 7 },
-            ]
+            ],
+            selectedWeight: { label: '350g', originalPrice: 8, discountedPrice: 3 }
         },
-        {
-            id: 7,
-            category: 'Vegetables',
-            name: 'Organic ..',
-            image: img,
-            price: {
-                original: 8,
-                discounted: 3,
-            },
-            discount: 77,
-            rating: 5,
-            reviews: 500,
-            weights: [
-                { label: '350g', originalPrice: 8, discountedPrice: 3 },
-                { label: '500g', originalPrice: 10, discountedPrice: 4 },
-                { label: '1kg', originalPrice: 15, discountedPrice: 7 },
-            ]
-        },
-        {
-            id: 8,
-            category: 'Vegetables',
-            name: 'Organic ..',
-            image: img,
-            price: {
-                original: 8,
-                discounted: 3,
-            },
-            discount: 77,
-            rating: 5,
-            reviews: 500,
-            weights: [
-                { label: '350g', originalPrice: 8, discountedPrice: 3 },
-                { label: '500g', originalPrice: 10, discountedPrice: 4 },
-                { label: '1kg', originalPrice: 15, discountedPrice: 7 },
-            ]
-        },
-        {
-            id: 9,
-            category: 'Vegetables',
-            name: 'Organic ..',
-            image: img,
-            price: {
-                original: 8,
-                discounted: 3,
-            },
-            discount: 77,
-            rating: 5,
-            reviews: 500,
-            weights: [
-                { label: '350g', originalPrice: 8, discountedPrice: 3 },
-                { label: '500g', originalPrice: 10, discountedPrice: 4 },
-                { label: '1kg', originalPrice: 15, discountedPrice: 7 },
-            ]
-        },
-        {
-            id: 10,
-            category: 'Vegetables',
-            name: 'Organic ..',
-            image: img,
-            price: {
-                original: 8,
-                discounted: 3,
-            },
-            discount: 77,
-            rating: 5,
-            reviews: 500,
-            weights: [
-                { label: '350g', originalPrice: 8, discountedPrice: 3 },
-                { label: '500g', originalPrice: 10, discountedPrice: 4 },
-                { label: '1kg', originalPrice: 15, discountedPrice: 7 },
-            ]
-        },
-        // Other products...
-
+       
+        
+        // Add more products if necessary...
     ]);
 
     const handleWeightChange = (weight, productId) => {
-        setSelectedWeight({
-            ...selectedWeight,
-            weight: weight.label,
-            price: weight.discountedPrice, // Update discounted price
-            originalPrice: weight.originalPrice, // Update original price
-            discountedPrice: weight.discountedPrice // Update the selected discounted price
-        });
+        setProducts(products.map(product => {
+            if (product.id === productId) {
+                return {
+                    ...product,
+                    selectedWeight: weight
+                };
+            }
+            return product;
+        }));
     };
 
     const handleAddToCart = (product) => {
         const productToAdd = {
             ...product,
-            selectedWeight: selectedWeight.weight,
-            selectedPrice: selectedWeight.price,
-            selectedOriginalPrice: selectedWeight.originalPrice,
-            selectedDiscountedPrice: selectedWeight.discountedPrice,
+            selectedWeight: product.selectedWeight.label,
+            selectedPrice: product.selectedWeight.discountedPrice,
+            selectedOriginalPrice: product.selectedWeight.originalPrice,
+            selectedDiscountedPrice: product.selectedWeight.discountedPrice,
         };
         setCart([...cart, productToAdd]);
         console.log("Added to Cart:", productToAdd); // Optional: for debugging
@@ -239,18 +191,16 @@ export default function Home() {
     };
 
     return (
-        <div className="container mx-auto p-4">
+        <div className="container mx-auto p-4 font-poppins">
             <div className="flex justify-between items-center mb-4">
                 <h1 className="text-2xl font-bold">Noga Product</h1>
                 <a href="#" className="flex items-center text-green-700 hover:text-green-900">
                     View All <FaArrowRight className="ml-2" />
                 </a>
-
             </div>
             <div className="relative">
                 <button
                     className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white border border-gray-300 rounded-full p-2 shadow-lg z-10 opacity-60"
-
                     onClick={() => productContainerRef.current.scrollBy({ left: -300, behavior: 'smooth' })}
                 >
                     <FaArrowLeft />
@@ -268,7 +218,7 @@ export default function Home() {
                             key={product.id}
                             className="flex-none w-64 transition-all duration-300 transform hover:scale-105 hover:shadow-lg border border-gray-200 rounded-lg overflow-hidden relative mr-4"
                         >
-                            <div className="absolute top-0 left-0 bg-white text-xs font-semibold text-gray-700 p-4">
+                            <div className="absolute top-0 left-0 bg-gray-200 text-xs font-semibold text-gray-700 p-4">
                                 {product.category}
                             </div>
                             <div className="flex items-center justify-between p-4">
@@ -278,7 +228,7 @@ export default function Home() {
                                 <Image
                                     src={product.image}
                                     alt={product.name}
-                                    className="w-full h-35 object-cover transition-transform duration-500 transform group-hover:scale-105"
+                                    className="w-[200px] h-[200px] p-4  transition-transform duration-500 transform group-hover:scale-105"
                                 />
                                 <div className="mt-3">
                                     <div className="flex gap-2 mt-2">
@@ -286,7 +236,7 @@ export default function Home() {
                                             <button
                                                 key={weight.label}
                                                 onClick={() => handleWeightChange(weight, product.id)}
-                                                className={`px-3 py-1 rounded-full border text-xs ${selectedWeight.weight === weight.label
+                                                className={`px-3 py-1 rounded-full border text-xs ${product.selectedWeight.label === weight.label
                                                     ? 'bg-green-700 text-white'
                                                     : 'bg-green-200'
                                                     }`}
@@ -298,8 +248,8 @@ export default function Home() {
                                 </div>
                                 <div className="mt-4">
                                     <div className="flex justify-between items-center mt-2">
-                                        <span className="text-sm font-bold text-green-700">₹{selectedWeight.discountedPrice}</span>
-                                        <span className="text-xs text-gray-500 line-through">₹{selectedWeight.originalPrice}</span>
+                                        <span className="text-sm font-bold text-green-700">₹{product.selectedWeight.discountedPrice}</span>
+                                        <span className="text-xs text-gray-500 line-through">₹{product.selectedWeight.originalPrice}</span>
                                     </div>
                                     <h2 className="text-sm font-semibold text-gray-800">
                                         {product.name}

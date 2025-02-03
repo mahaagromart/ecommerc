@@ -14,6 +14,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en" suppressHydrationWarning={true}>
+        <script src="https://static.elfsight.com/platform/platform.js" async></script>
       <body>
         {loading ? (
           <PreLoader />

@@ -21,7 +21,7 @@ export default function Home() {
         {
             id: 1,
             category: 'Fruits',
-            name: 'Organic Carrots',
+            name: 'Black berry',
             image: img,
             price: {
                 original: 8,
@@ -40,7 +40,7 @@ export default function Home() {
         {
             id: 2,
             category: 'Fruits',
-            name: 'Organic Broccoli',
+            name: 'Grapes',
             image: Fruitsa,
             price: {
                 original: 8,
@@ -59,7 +59,7 @@ export default function Home() {
         {
             id: 3,
             category: 'Fruits',
-            name: 'Organic Spinach',
+            name: 'papaya',
             image: Fruitsb,
             price: {
                 original: 8,
@@ -78,7 +78,7 @@ export default function Home() {
         {
             id: 4,
             category: 'Fruits',
-            name: 'Organic Lettuce',
+            name: 'Guvava',
             image:Fruitsc,
             price: {
                 original: 8,
@@ -97,7 +97,7 @@ export default function Home() {
         {
             id: 5,
             category: 'Fruits',
-            name: 'Organic Kale',
+            name: 'pineapple',
             image:Fruitsd,
             price: {
                 original: 8,
@@ -113,11 +113,12 @@ export default function Home() {
             ],
             selectedWeight: { label: '350g', originalPrice: 8, discountedPrice: 3 }
         },
+     
         {
             id: 6,
             category: 'Fruits',
-            name: 'Organic Cucumbers',
-            image: Fruitse,
+            name: 'Watermelon',
+            image: Fruitsg,
             price: {
                 original: 8,
                 discounted: 3,
@@ -135,45 +136,7 @@ export default function Home() {
         {
             id: 7,
             category: 'Fruits',
-            name: 'Organic Bell Peppers',
-            image:Fruitsf,
-            price: {
-                original: 8,
-                discounted: 3,
-            },
-            discount: 77,
-            rating: 5,
-            reviews: 500,
-            weights: [
-                { label: '350g', originalPrice: 8, discountedPrice: 3 },
-                { label: '500g', originalPrice: 10, discountedPrice: 4 },
-                { label: '1kg', originalPrice: 15, discountedPrice: 7 },
-            ],
-            selectedWeight: { label: '350g', originalPrice: 8, discountedPrice: 3 }
-        },
-        {
-            id: 8,
-            category: 'Fruits',
-            name: 'Organic Tomatoes',
-            image: Fruitsg,
-            price: {
-                original: 8,
-                discounted: 3,
-            },
-            discount: 77,
-            rating: 5,
-            reviews: 500,
-            weights: [
-                { label: '350g', originalPrice: 8, discountedPrice: 3 },
-                { label: '500g', originalPrice: 10, discountedPrice: 4 },
-                { label: '1kg', originalPrice: 15, discountedPrice: 7 },
-            ],
-            selectedWeight: { label: '350g', originalPrice: 8, discountedPrice: 3 }
-        },
-        {
-            id: 9,
-            category: 'Fruits',
-            name: 'Organic Zucchini',
+            name: 'Banana',
             image: Fruitsh,
             price: {
                 original: 8,
@@ -251,7 +214,7 @@ export default function Home() {
     return (
         <div className="container mx-auto p-4 font-poppins">
             <div className="flex justify-between items-center mb-4">
-                <h1 className="text-2xl font-bold">Featured Product</h1>
+                <h1 className="text-2xl font-bold">Fruit Product</h1>
                 <a href="#" className="flex items-center text-green-700 hover:text-green-900">
                     View All <FaArrowRight className="ml-2" />
                 </a>

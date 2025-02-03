@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Bannerk from "../../../../public/images/homebanner/kuchbhe.png";
-import Bannerm from "../../../../public/images/homebanner/kuchbhe.png";
-import Bannerf from "../../../../public/images/homebanner/kuchbhe.png"; // Replace with your actual image path
+import Bannerk from "../../../../public/images/homebanner/fruit (1).png";
+import Bannerm from "../../../../public/images/homebanner/fruit (2).png";
+import Bannerf from "../../../../public/images/homebanner/fruit (3).png"; // Replace with your actual image path
 import "../Firstbanner/banner.css";
 
 export default function Banner() {
@@ -57,7 +57,7 @@ export default function Banner() {
          {/* Column 2 - No rounding, normal border */}
          <div className="example-5 relative p-16 sm:p-14 lg:p-28">
           <Image
-            src={Bannerm} // Replace with your image path
+            src={Bannerf} // Replace with your image path
             alt="Column 2 Image"
             layout="fill"
             // Ensures the image covers the entire space of the div
