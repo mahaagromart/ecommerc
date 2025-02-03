@@ -1,6 +1,6 @@
 import Image from "next/image";
 import img from "../../../../public/images/img/banners.png"; // Desktop Image
-import Apple from "../../../../public/images/img/apple.png";
+import Apple from "../../../../public/images/img/Apple.png";
 import Playstore from "../../../../public/images/img/playstore.png";
 
 export default function BannerPage() {
