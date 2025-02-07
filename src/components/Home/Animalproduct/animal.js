@@ -228,7 +228,7 @@ export default function Home() {
                                 <Image
                                     src={product.image}
                                     alt={product.name}
-                                    className="w-[200px] h-[200px] p-4  transition-transform duration-500 transform group-hover:scale-105"
+                                    className="w-[200px] h-[270px] p-4   transition-transform duration-500 transform group-hover:scale-105"
                                 />
                                 <div className="mt-3">
                                     <div className="flex gap-2 mt-2">

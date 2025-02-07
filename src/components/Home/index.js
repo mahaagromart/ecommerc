@@ -19,6 +19,8 @@ import Fertilizer from "./Fertilizerproduct/fertilizer"
 import Animal from "./Animalproduct/animal"
 import Garden from "./Gardeningpro/garden"
 import Bannersix from "./Firstbanner/bannersix"
+import Bannernine from "./Firstbanner/bannernine"
+import Bannerten from "./Firstbanner/bannerten"
 import Agroengineer from "./Agroengineer/Agroengineer"
 import Belowbanner from "./Firstbanner/bannerseven"
 const Home = () => {
@@ -41,11 +43,11 @@ const Home = () => {
       <Pesticides/>
       <Bannersix />
       <Fertilizer/>
-      <Bannersix />
+      <Bannernine />
       <Animal/>
       <Bannersix />
       <Garden/>
-      <Bannersix />
+      <Bannerten />
       <Agroengineer/>
       <Bannersix />
       <Testimonial />

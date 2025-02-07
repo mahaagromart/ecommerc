@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Bannerk from "../../../../public/images/homebanner/pesticides (1).png";
-import Bannerm from "../../../../public/images/homebanner/pesticides (2).png";
-import Bannerf from "../../../../public/images/homebanner/pesticides (3).png"; // Replace with your actual image path
+import Bannerk from "../../../../public/images/homebanner/ferti (1).png";
+import Bannerm from "../../../../public/images/homebanner/ferti (2).png";
+import Bannerf from "../../../../public/images/homebanner/ferti (3).png"; // Replace with your actual image path
 import "../Firstbanner/banner.css";
 
 export default function Banner() {
@@ -14,7 +14,6 @@ export default function Banner() {
             src={Bannerk} // Replace with your image path
             alt="Column 1 Image"
             layout="fill"
-           
             className="rounded-lg"
           />
           <svg className="absolute top-0 left-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -37,7 +36,6 @@ export default function Banner() {
             src={Bannerm} // Replace with your image path
             alt="Column 2 Image"
             layout="fill"
-           
             className="rounded-lg"
           />
           <svg className="absolute top-0 left-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -60,7 +58,6 @@ export default function Banner() {
             src={Bannerf} // Replace with your image path
             alt="Column 3 Image"
             layout="fill"
-           
             className="rounded-lg"
           />
           <svg className="absolute top-0 left-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
