@@ -1,256 +1,96 @@
-'use client';  // This tells Next.js that the component should run on the client side.
-import Image from 'next/image'
+'use client';
+import Image from 'next/image';
 import { FaHeart, FaArrowRight } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
-import img from "../../../../public/images/fruitproduct/fruits.svg"
-import sella from "../../../../public/images/onthesell/sell (1).svg"
-import sellb from "../../../../public/images/onthesell/sell (2).svg"
-import sellc from "../../../../public/images/onthesell/sell (3).svg"
-import selld from "../../../../public/images/onthesell/sell (4).svg"
-import selle from "../../../../public/images/onthesell/sell (5).svg"
-import sellf from "../../../../public/images/onthesell/selltwo.webp"
+import img from "../../../../public/images/fruitproduct/fruits.svg";
+import sella from "../../../../public/images/onthesell/sell (1).svg";
+import sellb from "../../../../public/images/onthesell/sell (2).svg";
+import sellc from "../../../../public/images/onthesell/sell (3).svg";
+import selld from "../../../../public/images/onthesell/sell (4).svg";
+import selle from "../../../../public/images/onthesell/sell (5).svg";
+import sellf from "../../../../public/images/onthesell/selltwo.webp";
 
 const Banner = () => {
-    const [currentTime, setCurrentTime] = useState(new Date());
-    const [daysLeft, setDaysLeft] = useState(0);
-    const [hoursLeft, setHoursLeft] = useState(0);
-    const [minutesLeft, setMinutesLeft] = useState(0);
-    const [secondsLeft, setSecondsLeft] = useState(0);
-
-    useEffect(() => {
-        // Update the time every second
-        const interval = setInterval(() => {
-            const now = new Date();
-            setCurrentTime(now);
-
-            // Set the target date for countdown
-            const targetDate = new Date('2024-12-01');
-            const timeDiff = targetDate - now;
-
-            if (timeDiff > 0) {
-                const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
-
-                setDaysLeft(days);
-                setHoursLeft(hours);
-                setMinutesLeft(minutes);
-                setSecondsLeft(seconds);
-            } else {
-                clearInterval(interval);
-            }
-        }, 1000);
-
-        return () => clearInterval(interval);
-    }, []);
-
     return (
-        <div className="container mx-auto rounded-xl">
+        <div className="container mx-auto px-4">
+            {/* Header Section */}
+            <div className="text-left py-6">
+                <h1 className="text-3xl font-bold">On Sell Products</h1>
+            </div>
 
-            {/* Bottom Section: Image and Product Columns */}
-            <div className="flex p-2 rounded-md shadow-sm mt-4 flex-col md:flex-row">
-                {/* Right Side - 3 Columns */}
-                <div className="w-full md:w-2/2 flex flex-col md:grid md:grid-cols-3 gap-2">
-                    {/* First Column */}
-                    <div className='rounded-md'>
-                        {/* Top Section: Day of the Week and Time */}
-                        <div className="p-2 rounded-lg justify-between items-center py-6 flex-wrap">
-                            {/* Left Section: Deal of the Week */}
-                            <div className="text-xl font-semibold flex-grow">
-                                <h1 className="text-2xl font-bold">On Sell Products</h1>
-                            </div>
-                        </div>
-
-                        <div className="space-y-1 p-8 bg-grey-500 rounded-lg border-2">
-                            <div className="flex items-center justify-between">
-                                <ul className="flex space-x-1">
-                                    <li className="bg-gray-200 px-1 py-0.5 rounded">
-                                        <a href="" rel="tag">Fruit</a>
-                                    </li>
-                                </ul>
-                                <FaHeart className="text-red-500 text-base" />
-                            </div>
-                            <div className="relative">
-                                <Image
-                                    src={img}
-                                    alt="Whole Foods Market, Organic Trimmed Green Beans, 12 oz"
-                                    className="rounded"
-                                    width={281}  // Adjust width as needed
-                                    height={400} // Adjust height as needed
-                                />
-                            </div>
-                            <div>
-                                <h2 className="text-sm font-semibold">Fresh Black-berry no.1 quality </h2>
-                                <div className="flex items-center space-x-1">
-                                    <span className="text-green-500 font-bold text-xs">₹3.00 - ₹8.00</span>
-                                    <span className="bg-red-500 text-white px-1 py-0.5 rounded text-xs">-77%</span>
-                                </div>
-                                <div className="flex items-center space-x-1 mt-1">
-                                    <span className="text-yellow-500 text-xs">★★★★★</span>
-                                    <span className="text-xs">(5.00)</span>
-                                </div>
-                                <div className="flex space-x-1 mt-2">
-                                    <button className="bg-green-500 text-white px-2 py-1 rounded text-xs">Add to Cart</button>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    {/* Second Column */}
-                    <div className="space-y-1">
-                        <div className="flex justify-end items-center py-4">
-                            <button className="flex border-2 p-2 items-center rounded-full text-black-500">
-                                See More <FaArrowRight className="ml-1" />
+            {/* Grid Layout */}
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* First Column - Featured Product */}
+                <div className="p-6 bg-white shadow-lg rounded-xl transition transform hover:scale-105 hover:shadow-2xl">
+                    <div className='border border-gray-200 p-4 rounded-xl'>
+                        <div className="flex justify-between">
+                            <span className="text-sm text-gray-600 bg-gray-100 px-2 py-1 rounded-full">Premium Fruits</span>
+                            <button className="p-2 rounded-full hover:bg-red-100">
+                                <FaHeart className="text-red-500" />
                             </button>
                         </div>
-
-                        <div className="relative flex items-start  space-x-2 border-2 bg-grey-500 rounded-lg">
-                            <Image
-                                src={sella}
-                                alt="Delicious Lay’s Potato Chips, Classic, 8 oz Bag"
-                                className="w-1/3 h-auto border-r-0 border-gray-300 mx-2 sm:border-r-2"
-                            />
-
-                            <div className="flex-1 p-2">
-                                <h2 className="text-md font-semibold">Sonkari</h2>
-                                <div className="flex items-center space-x-1">
-                                    <span className="line-through text-gray-500 text-sm">₹21.00</span>
-                                    <span className="text-green-500 font-bold text-sm">₹12.00</span>
-                                </div>
-                                <div className="flex items-center space-x-1 mt-1">
-                                    <span className="text-yellow-500 text-sm">★★★★☆</span>
-                                    <span className="text-sm">(4.00)</span>
-                                </div>
-                                <div className="flex space-x-1 mt-2">
-                                    <button className="bg-green-500 text-white px-2 py-1 rounded text-sm">Add to Cart</button>
-                                </div>
-                            </div>
+                        <div className="my-8 mx-5 flex justify-center">
+                            <Image src={img} alt="Fresh Blackberry" width={200} height={200} className="object-contain" />
                         </div>
-
-                        <div className="relative flex items-start  space-x-2 border-2 bg-grey-500 rounded-lg ">
-                            <Image
-                                src={sellb}
-                                alt="Delicious Lay’s Potato Chips, Classic, 8 oz Bag"
-                                className="w-1/3 h-auto border-r-0 border-gray-300 mx-2 sm:border-r-2"
-                            />
-
-                            <div className="flex-1 p-2">
-                                <h2 className="text-md font-semibold">Mahakrushi</h2>
-                                <div className="flex items-center space-x-1">
-                                    <span className="line-through text-gray-500 text-sm">₹21.00</span>
-                                    <span className="text-green-500 font-bold text-sm">₹12.00</span>
-                                </div>
-                                <div className="flex items-center space-x-1 mt-1">
-                                    <span className="text-yellow-500 text-sm">★★★★☆</span>
-                                    <span className="text-sm">(4.00)</span>
-                                </div>
-                                <div className="flex space-x-1 mt-2">
-                                    <button className="bg-green-500 text-white px-2 py-1 rounded text-sm">Add to Cart</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="relative flex items-start  space-x-2 border-2 bg-grey-500 rounded-lg">
-                            <Image
-                                src={sellc}
-                                alt="Delicious Lay’s Potato Chips, Classic, 8 oz Bag"
-                                className="w-1/3 h-auto border-r-0 border-gray-300 mx-2 sm:border-r-2"
-                            />
-
-                            <div className="flex-1 p-2">
-                                <h2 className="text-md font-semibold">Pansari</h2>
-                                <div className="flex items-center space-x-1">
-                                    <span className="line-through text-gray-500 text-sm">₹21.00</span>
-                                    <span className="text-green-500 font-bold text-sm">₹12.00</span>
-                                </div>
-                                <div className="flex items-center space-x-1 mt-1">
-                                    <span className="text-yellow-500 text-sm">★★★★☆</span>
-                                    <span className="text-sm">(4.00)</span>
-                                </div>
-                                <div className="flex space-x-1 mt-2">
-                                    <button className="bg-green-500 text-white px-2 py-1 rounded text-sm">Add to Cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Third Column */}
-                    <div className="space-y-1">
-                        <div className="flex justify-between items-center py-4">
-                            <h2 className="text-2xl font-bold">Best Seller</h2>
-                            <button className="flex border-2 rounded-full p-2 items-center text-black-500">
-                                See More <FaArrowRight className="ml-1" />
-                            </button>
-                        </div>
-                        <div className="relative flex items-start  space-x-2 border-2 bg-grey-500 rounded-lg">
-                            <Image
-                                src={selld}
-                                alt="Delicious Lay’s Potato Chips, Classic, 8 oz Bag"
-                                className="w-1/3 h-auto border-r-0 border-gray-300 mx-2 sm:border-r-2"
-                            />
-
-                            <div className="flex-1 p-2">
-                                <h2 className="text-md font-semibold">Mahaneembh..</h2>
-                                <div className="flex items-center space-x-1">
-                                    <span className="line-through text-gray-500 text-sm">₹21.00</span>
-                                    <span className="text-green-500 font-bold text-sm">₹12.00</span>
-                                </div>
-                                <div className="flex items-center space-x-1 mt-1">
-                                    <span className="text-yellow-500 text-sm">★★★★☆</span>
-                                    <span className="text-sm">(4.00)</span>
-                                </div>
-                                <div className="flex space-x-1 mt-2">
-                                    <button className="bg-green-500 text-white px-2 py-1 rounded text-sm">Add to Cart</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="relative flex items-start  space-x-2 border-2 bg-grey-500 rounded-lg ">
-                            <Image
-                                src={selle}
-                                alt="Delicious Lay’s Potato Chips, Classic, 8 oz Bag"
-                                className="w-1/3 h-auto border-r-0 border-gray-300 mx-2 sm:border-r-2"
-                            />
-
-                            <div className="flex-1 p-2">
-                                <h2 className="text-md font-semibold">Mahaextra..</h2>
-                                <div className="flex items-center space-x-1">
-                                    <span className="line-through text-gray-500 text-sm">₹21.00</span>
-                                    <span className="text-green-500 font-bold text-sm">₹12.00</span>
-                                </div>
-                                <div className="flex items-center space-x-1 mt-1">
-                                    <span className="text-yellow-500 text-sm">★★★★☆</span>
-                                    <span className="text-sm">(4.00)</span>
-                                </div>
-                                <div className="flex space-x-1 mt-2">
-                                    <button className="bg-green-500 text-white px-2 py-1 rounded text-sm">Add to Cart</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="relative flex items-start  space-x-2 border-2 bg-grey-500 rounded-lg">
-                            <Image
-                                src={sellf}
-                                alt="Delicious Lay’s Potato Chips, Classic, 8 oz Bag"
-                                className="w-1/3 h-auto border-r-0 border-gray-300 mx-2 sm:border-r-2"
-                            />
-
-                            <div className="flex-1 p-2">
-                                <h2 className="text-md font-semibold">Noga jam</h2>
-                                <div className="flex items-center space-x-1">
-                                    <span className="line-through text-gray-500 text-sm">₹21.00</span>
-                                    <span className="text-green-500 font-bold text-sm">₹12.00</span>
-                                </div>
-                                <div className="flex items-center space-x-1 mt-1">
-                                    <span className="text-yellow-500 text-sm">★★★★☆</span>
-                                    <span className="text-sm">(4.00)</span>
-                                </div>
-                                <div className="flex space-x-1 mt-2">
-                                    <button className="bg-green-500 text-white px-2 py-1 rounded text-sm">Add to Cart</button>
-                                </div>
-                            </div>
-                        </div>
+                        <h2 className="text-lg font-semibold">Fresh Blackberry No.1 Quality</h2>
+                        <p className="text-emerald-600 font-bold text-lg">₹3.00 - ₹8.00</p>
+                        <p className="text-sm text-gray-500">★★★★★ (5.00)</p>
+                        <button className="w-full mt-3 bg-emerald-500 hover:bg-emerald-600 text-white py-2 rounded-lg">
+                            Add to Cart
+                        </button>
                     </div>
                 </div>
+
+                {/* Second Column - More Deals */}
+                <div className="flex justify-center items-center">
+                    <div className="w-full max-w-4xl px-4">
+                        <div className="flex justify-between items-center mb-4">
+                            <h2 className="text-2xl font-bold">More Deals</h2>
+                            <button className="flex items-center border-2 px-4 py-2 rounded-full hover:bg-gray-100">
+                                See More <FaArrowRight className="ml-2" />
+                            </button>
+                        </div>
+                        {[sella, sellb, sellc].map((product, index) => (
+                            <div key={index} className="flex items-center bg-gray-100 rounded-lg p-5 mb-4 transition transform hover:scale-105 hover:shadow-xl">
+                                <Image src={product} alt="Product" width={100} height={100} className="rounded-md border-2 " />
+                                <div className="ml-4">
+                                    <h3 className="text-md font-semibold">Product Name</h3>
+                                    <p className="text-sm text-gray-500">★★★★☆ (4.00)</p>
+                                    <p className="text-green-600 font-bold">₹12.00 <span className="line-through text-gray-500">₹21.00</span></p>
+                                    <button className="mt-2 bg-green-500 text-white px-3 py-1 rounded text-sm hover:bg-green-600">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Third Column - Best Sellers */}
+                <div className="flex justify-center items-center">
+                    <div className="w-full max-w-4xl px-4">
+                        <div className="flex justify-between items-center mb-4">
+                            <h2 className="text-2xl font-bold">Best Seller</h2>
+                            <button className="flex items-center border-2 px-4 py-2 rounded-full hover:bg-gray-100">
+                                See More <FaArrowRight className="ml-2" />
+                            </button>
+                        </div>
+                        {[selld, selle, sellf].map((product, index) => (
+                            <div key={index} className="flex items-center bg-gray-100 rounded-lg p-5 mb-4 transition transform hover:scale-105 hover:shadow-xl">
+                                <Image src={product} alt="Product" width={100} height={120} className="rounded-md border-2" />
+                                <div className="ml-4">
+                                    <h3 className="text-md-center font-semibold">Product Name</h3>
+                                    <p className="text-sm text-gray-500">★★★★☆ (4.00)</p>
+                                    <p className="text-green-600 font-bold">₹12.00 <span className="line-through text-gray-500">₹21.00</span></p>
+                                    <button className="mt-2 bg-green-500 text-white px-3 py-1 rounded text-sm hover:bg-green-600">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
             </div>
         </div>
     );

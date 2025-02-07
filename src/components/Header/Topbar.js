@@ -60,7 +60,7 @@ const Topbar = () => {
     };
 
     return (
-        <div className="bg-green-900 text-white py-2 px-4 sm:px-16 hidden sm:block">
+        <div className="bg-green-900 text-white py-2 px-4 sm:px-16 hidden sm:block ">
             <div className="container mx-auto flex flex-wrap justify-between items-center">
                 <div className="flex items-center space-x-4 mb-2 sm:mb-0">
                     <div className="flex items-center">

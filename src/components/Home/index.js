@@ -7,6 +7,7 @@ import Bannertwo from "./Firstbanner/bannertwo";
 import Counter from "./Firstbanner/counter"
 import Dayoffer from "./weeklyoffer/dayoffer"
 import Bannerthree from "./Firstbanner/bannerthree"
+import Bannereight from "./Firstbanner/bannereight"
 import Onsellproduct from "./onsellproduct/sellproduct"
 import Slider from "./Slider/firstslider"
 import Testimonial from "./Testimonial/Testimonial"
@@ -31,6 +32,7 @@ const Home = () => {
       <Dayoffer />
       <Bannerthree />
       <Foodproduct />
+      <Bannereight/>
       <Onsellproduct />
       <Slider />
       <Bannerfour />

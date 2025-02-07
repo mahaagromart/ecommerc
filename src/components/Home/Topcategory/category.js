@@ -20,7 +20,7 @@ import "../Topcategory/category.css";
 
 const ProductCategories = () => {
   const categories = [
-    { category: "Noga", image: Noga },
+    { category: "Nogaa brand..", image: Noga },
     { category: "Fertilizer", image: Fertilizer },
     { category: "Agriculture", image: Agriculture },
     { category: "Drone Service", image: Drone },

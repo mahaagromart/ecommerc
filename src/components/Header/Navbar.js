@@ -5,7 +5,7 @@ import Line from '../../../public/images/homebanner/line.svg';
 
 const Navbar = () => {
   return (
-    <nav className="bg-gray-100 container max-w-screen-3xl mx-auto rounded-lg  hidden sm:block"> {/* Hide on mobile by default */}
+    <nav className="bg-gray-100 container max-w-screen-3xl border-2  mx-auto rounded-lg hidden sm:block"> {/* Hide on mobile by default */}
       <div className="flex justify-between items-center">
         <ul className="flex space-x-6 px-6">
           <li>

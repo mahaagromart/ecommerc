@@ -8,208 +8,112 @@ import 'swiper/css/autoplay';
 import { Pagination, Autoplay } from 'swiper/modules';
 
 import Imageone from '../../../../public/images/homebanner/img..svg';
-import Imagethree from '../../../../public/images/homebanner/drone.svg';
-import Imagefour from '../../../../public/images/homebanner/noga.svg';
+import Imagethree from '../../../../public/images/homebanner/dronee (1).svg';
+import Imagefour from '../../../../public/images/homebanner/dronee (2).svg';
 import Imagefive from '../../../../public/images/homebanner/bannerfive.svg';
 
 const Banner = () => {
     return (
-        <div className="container mx-auto max-w-screen-3xl py-3 p-1 grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {/* Swiper Component for First Banner */}
+
+        <div className="container  mx-auto px-6 py-1 grid  sm:mt-0 lg:mt-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
+
+            {/* First Banner */}
             <Swiper
                 modules={[Pagination, Autoplay]}
-                spaceBetween={30}
+                spaceBetween={20}
                 slidesPerView={1}
-                pagination={{ clickable: true, el: '.swiper-pagination' }}
+                pagination={{ clickable: true }}
                 autoplay={{ delay: 3000 }}
-                className="w-full relative"
+                className="w-full max-w-md"
             >
-                <SwiperSlide>
-                    <div className="bg-[#9ecf3f] rounded-2xl shadow-md p-3 flex flex-col items-center md:items-center">
-                        <div className="flex justify-center">
-                            <Image
-                                src={Imageone}
-                                alt="Grocery Items"
-                                className="rounded-md"
-                                width={270}
-                                height={270}
-                            />
-                        </div>
-                        <div className="flex flex-col items-center justify-center text-center mb-2">
-                            <h2 className="text-xl font-bold mb-8 text-white">Get Up to 30%* OFF</h2>
-                            <button className="bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 mb-2 rounded-md">
+                {[Imageone, Imageone].map((img, index) => (
+                    <SwiperSlide key={index}>
+                        <div className="bg-[#9ecf3f] rounded-2xl shadow-lg p-6 flex flex-col items-center text-center">
+                            <Image src={img} alt="Grocery Items" className="rounded-md" width={400} height={450} />
+                            <h2 className="text-lg md:text-xl font-bold mt-4 mb-3 text-white">Get Up to 30%* OFF</h2>
+                            <button className="bg-black hover:bg-gray-800 text-white font-bold py-1 px-4 rounded-md w-full sm:w-auto">
                                 SHOP NOW
                             </button>
                         </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="bg-[#9ecf3f] rounded-2xl shadow-md p-3 flex flex-col items-center md:items-center">
-                        <div className="flex justify-center">
-                            <Image
-                                src={Imageone}
-                                alt="Grocery Items"
-                                className="rounded-md"
-                                width={270}
-                                height={270}
-                            />
-                        </div>
-                        <div className="flex flex-col items-center justify-center text-center mb-2">
-                            <h2 className="text-xl font-bold mb-8 text-white">Get Up to 30%* OFF</h2>
-                            <button className="bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 mb-2 rounded-md">
-                                SHOP NOW
-                            </button>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <div className="swiper-pagination"></div>
+                    </SwiperSlide>
+                ))}
             </Swiper>
 
             {/* Second Banner */}
-            <div className="bg-white rounded-2xl space-y-3">
+            <div className="w-full max-w-md   pt-1 mx-auto">
                 <Swiper
                     modules={[Pagination, Autoplay]}
-                    spaceBetween={30}
+                    spaceBetween={20}
                     slidesPerView={1}
-                    pagination={{ clickable: true, el: '.swiper-pagination' }}
+                    pagination={{ clickable: true }}
                     autoplay={{ delay: 4000 }}
-                    className="w-full relative"
+                    className="w-full"
                 >
-                    <SwiperSlide>
-                        <div className="bg-yellow-400 p-2 rounded-2xl shadow-md flex flex-col items-center md:items-center sm:flex-row">
+                    {[Imagethree, Imagethree].map((img, index) => (
+                        <SwiperSlide key={index}>
                             <Image
-                                src={Imagethree}
-                                alt="Drone Service"
-                                className="rounded-md mb-4 sm:mb-0 sm:mr-4"
-                                width={180}
-                                height={190}
+                                src={img}
+                                alt="Service Image"
+                                className="rounded-2xl"
+                                width={500}
+                                height={300}
                             />
-                            <div className="text-center sm:text-left">
-                                <h2 className="text-lg font-bold text-black font-poppins mb-4">Get Drone Service At</h2>
-                                <p className="mb-4 text-black">Get up 50% off</p>
-                                <button className="bg-black hover:bg-gray-800 text-white font-bold text-sm py-2 px-4 rounded-md mb-10">
-                                    SHOP NOW
-                                </button>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className="bg-yellow-400 p-2 rounded-2xl shadow-md flex flex-col items-center md:items-center sm:flex-row">
-                            <Image
-                                src={Imagethree}
-                                alt="Drone Service"
-                                className="rounded-md mb-4 sm:mb-0 sm:mr-4"
-                                width={180}
-                                height={200}
-                            />
-                            <div className="text-center sm:text-left">
-                                <h2 className="text-lg font-bold text-black font-poppins mb-4">Get Drone Service At</h2>
-                                <p className="mb-4 text-black">Get up 50% off</p>
-                                <button className="bg-black hover:bg-gray-800 text-white font-bold text-sm py-2 px-4 rounded-md mb-10">
-                                    SHOP NOW
-                                </button>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <div className="swiper-pagination p-4"></div>
+                        </SwiperSlide>
+                    ))}
                 </Swiper>
+
+                <div className="my-2  pb-1" />  {/* This is the middle gap */}
+
                 <Swiper
                     modules={[Pagination, Autoplay]}
-                    spaceBetween={30}
+                    spaceBetween={20}
                     slidesPerView={1}
-                    pagination={{ clickable: true, el: '.swiper-pagination' }}
+                    pagination={{ clickable: true }}
                     autoplay={{ delay: 4000 }}
-                    className="w-full relative"
+                    className="w-full"
                 >
-                    <SwiperSlide>
-                        <div className="bg-[#ff574c] p-2 rounded-2xl shadow-md flex flex-col items-center md:items-center sm:flex-row">
+                    {[Imagefour, Imagefour].map((img, index) => (
+                        <SwiperSlide key={index}>
                             <Image
-                                src={Imagefour}
-                                alt="Plant Protection"
-                                className="rounded-md mb-4 sm:mb-0 sm:mr-4"
-                                width={180}
-                                height={180}
+                                src={img}
+                                alt="Service Image"
+                                className="rounded-2xl"
+                                width={500}
+                                height={300}
                             />
-                            <div className="text-center sm:text-left">
-                                <h2 className="text-lg font-bold text-white font-poppins mb-4">Protect Your Plant</h2>
-                                <button className="bg-black hover:bg-gray-800 text-white font-bold text-sm py-2 px-4 rounded-md mb-10">
-                                    SHOP NOW
-                                </button>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className="bg-[#ff574c] p-2 rounded-2xl shadow-md flex flex-col items-center md:items-center sm:flex-row">
-                            <Image
-                                src={Imagefour}
-                                alt="Plant Protection"
-                                className="rounded-md mb-4 sm:mb-0 sm:mr-4"
-                                width={180}
-                                height={180}
-                            />
-                            <div className="text-center sm:text-left">
-                                <h2 className="text-lg font-bold text-white font-poppins mb-4">Protect Your Plant</h2>
-                                <button className="bg-black hover:bg-gray-800 text-white font-bold text-sm py-2 px-4 rounded-md mb-10">
-                                    SHOP NOW
-                                </button>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <div className="swiper-pagination p-4"></div>
+                        </SwiperSlide>
+                    ))}
                 </Swiper>
             </div>
+
+
+
 
             {/* Third Banner */}
             <Swiper
                 modules={[Pagination, Autoplay]}
-                spaceBetween={30}
+                spaceBetween={20}
                 slidesPerView={1}
-                pagination={{ clickable: true, el: '.swiper-pagination' }}
+                pagination={{ clickable: true }}
                 autoplay={{ delay: 3000 }}
-                className="w-full relative"
+                className="w-full max-w-md"
             >
-                <SwiperSlide>
-                    <div className="bg-[#e78f54] rounded-2xl shadow-md p-3 flex flex-col items-center md:items-center">
-                        <div className="flex justify-center">
-                            <Image
-                                src={Imagefive}
-                                alt="Grocery Items"
-                                className="rounded-md"
-                                width={270}
-                                height={270}
-                            />
-                        </div>
-                        <div className="flex flex-col items-center justify-center text-center mb-2">
-                            <h2 className="text-xl font-bold mb-8 text-white">Get Up to 30%* OFF</h2>
-                            <button className="bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 mb-2 rounded-md">
+                {[Imagefive, Imagefive].map((img, index) => (
+                    <SwiperSlide key={index}>
+                        <div className="bg-[#e78f54] rounded-2xl shadow-lg p-6 flex flex-col items-center text-center">
+                            <Image src={img} alt="Grocery Items" className="rounded-md" width={400} height={350} />
+                            <h2 className="text-lg md:text-xl font-bold mt-4 mb-3 text-white">Get Up to 30%* OFF</h2>
+                            <button className="bg-black hover:bg-gray-800 text-white font-bold py-1 px-4 rounded-md w-full sm:w-auto">
                                 SHOP NOW
                             </button>
                         </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="bg-[#e78f54] rounded-2xl shadow-md p-3 flex flex-col items-center md:items-center">
-                        <div className="flex justify-center">
-                            <Image
-                                src={Imagefive}
-                                alt="Grocery Items"
-                                className="rounded-md"
-                                width={270}
-                                height={270}
-                            />
-                        </div>
-                        <div className="flex flex-col items-center justify-center text-center mb-2">
-                            <h2 className="text-xl font-bold mb-8 text-white">Get Up to 30%* OFF</h2>
-                            <button className="bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 mb-2 rounded-md">
-                                SHOP NOW
-                            </button>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <div className="swiper-pagination"></div>
+                    </SwiperSlide>
+                ))}
             </Swiper>
+
         </div>
     );
 };
 
 export default Banner;
+
